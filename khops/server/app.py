@@ -9,6 +9,10 @@ import logging
 from khops.core.config import settings
 from khops.server.routes import health, metrics, models, pipelines, runs
 from khops.core.logging import setup_logging
+from khops.db.session import init_db
+from khops.db.base import Base
+from khops.db.session import engine
+import sqlalchemy
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -19,7 +23,16 @@ setup_logging()
 async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
     logger.info("🚀 KHOps Server starting up...")
+    try:
+        # Initialize database
+        logger.info("Initializing database...")
+        Base.metadata.create_all(bind=engine)
+        logger.info("✅ Database initialized")
+    except Exception as e:
+        logger.error(f"❌ Error initializing database: {str(e)}")
+    
     yield
+    
     logger.info("🛑 KHOps Server shutting down...")
 
 

@@ -4,3 +4,1695 @@ You can install "python-multipart" with:
 pip install python-multipart
 
 2026-04-10 02:18:03 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 02:30:02 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-10 02:30:04 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 02:30:04 - khops.server.app - INFO - Initializing database...
+2026-04-10 02:30:04 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:30:29 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:30:29 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:30:37 - khops.server.services.base_service - ERROR - Error getting Model list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:30:37 - khops.server.services.model_service - ERROR - Error listing models: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:35:34 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:34 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:34 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:35:53 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:42 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:36:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:42 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:36:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:36:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:41:57 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-10 02:42:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error creating Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: INSERT INTO pipelines (name, description, definition) VALUES (?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_pipeline', 'Pipeline for integration testing', '{"nodes": [{"id": "load", "type": "data"}, {"id": "train", "type": "training"}], "edges": [{"from": "load", "to": "train"}]}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines 
+WHERE pipelines.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
+FROM runs 
+WHERE runs.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.app - ERROR - Unhandled exception: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs 
+WHERE runs.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/1/logs "HTTP/1.1 200 OK"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/runs/1/cancel "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error creating Model: (sqlite3.OperationalError) no such table: models
+[SQL: INSERT INTO models (name, version, stage, path, metrics) VALUES (?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_model', '3.0.0', 'dev', 's3://models/test/3.0.0', '{"accuracy": 0.96, "f1_score": 0.93}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:42 - khops.server.app - ERROR - Unhandled exception: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('nonexistent_model', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
+FROM metrics 
+WHERE metrics.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/metrics/log "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics/accuracy "HTTP/1.1 200 OK"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/invalid_endpoint "HTTP/1.1 404 Not Found"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: DELETE http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: INSERT INTO pipelines (name, description, definition) VALUES (?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_pipeline', 'Pipeline for integration testing', '{"nodes": [{"id": "load", "type": "data"}, {"id": "train", "type": "training"}], "edges": [{"from": "load", "to": "train"}]}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines 
+WHERE pipelines.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
+FROM runs 
+WHERE runs.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.app - ERROR - Unhandled exception: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs 
+WHERE runs.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/1/logs "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/runs/1/cancel "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Model: (sqlite3.OperationalError) no such table: models
+[SQL: INSERT INTO models (name, version, stage, path, metrics) VALUES (?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_model', '3.0.0', 'dev', 's3://models/test/3.0.0', '{"accuracy": 0.96, "f1_score": 0.93}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.app - ERROR - Unhandled exception: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('nonexistent_model', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
+FROM metrics 
+WHERE metrics.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/metrics/log "HTTP/1.1 400 Bad Request"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics/accuracy "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/invalid_endpoint "HTTP/1.1 404 Not Found"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: DELETE http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:02 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error creating Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: INSERT INTO pipelines (name, description, definition) VALUES (?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_pipeline', 'Pipeline for integration testing', '{"nodes": [{"id": "load", "type": "data"}, {"id": "train", "type": "training"}], "edges": [{"from": "load", "to": "train"}]}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 400 Bad Request"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines 
+WHERE pipelines.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
+FROM runs 
+WHERE runs.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:03 - khops.server.app - ERROR - Unhandled exception: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs 
+WHERE runs.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/1/logs "HTTP/1.1 200 OK"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/runs/1/cancel "HTTP/1.1 400 Bad Request"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error creating Model: (sqlite3.OperationalError) no such table: models
+[SQL: INSERT INTO models (name, version, stage, path, metrics) VALUES (?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_model', '3.0.0', 'dev', 's3://models/test/3.0.0', '{"accuracy": 0.96, "f1_score": 0.93}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 400 Bad Request"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:04 - khops.server.app - ERROR - Unhandled exception: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('nonexistent_model', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
+FROM metrics 
+WHERE metrics.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/metrics/log "HTTP/1.1 400 Bad Request"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics/accuracy "HTTP/1.1 200 OK"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/invalid_endpoint "HTTP/1.1 404 Not Found"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: DELETE http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:44:14 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:14 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:44:15 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:49:06 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:27 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:50:47 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:58 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:58 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:58 - khops.server.services.base_service - INFO - Created Pipeline 1
+2026-04-10 02:51:58 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:58 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:58 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Updated Pipeline 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Deleted Pipeline 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Created Run 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Updated Run 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Deleted Run 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Created Model 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Updated Model 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Deleted Model 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.model_service - INFO - Promoted model versioned_model/1.0.0 to staging
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Created Metrics 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Updated Metrics 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - khops.server.services.base_service - INFO - Deleted Metrics 1
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: INSERT INTO pipelines (name, description, definition) VALUES (?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_pipeline', 'Pipeline for integration testing', '{"nodes": [{"id": "load", "type": "data"}, {"id": "train", "type": "training"}], "edges": [{"from": "load", "to": "train"}]}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 400 Bad Request"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines 
+WHERE pipelines.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
+FROM runs 
+WHERE runs.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.app - ERROR - Unhandled exception: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'string_pattern_mismatch', 'loc': ('response', 'status'), 'msg': "String should match pattern '^(pending|running|success|failed)$'", 'input': 'completed', 'ctx': {'pattern': '^(pending|running|success|failed)$'}}
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/runs.py", line 33, in get_run
+    GET /api/v1/runs/{run_id}
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+FROM runs 
+WHERE runs.id = ?
+ LIMIT ? OFFSET ?]
+[parameters: (9999, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/9999 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs/1/logs "HTTP/1.1 200 OK"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/runs/1/cancel "HTTP/1.1 400 Bad Request"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Model: (sqlite3.OperationalError) no such table: models
+[SQL: INSERT INTO models (name, version, stage, path, metrics) VALUES (?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('integration_test_model', '3.0.0', 'dev', 's3://models/test/3.0.0', '{"accuracy": 0.96, "f1_score": 0.93}')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 400 Bad Request"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.app - ERROR - Unhandled exception: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 47, in get_model
+    GET /api/v1/models/{model_name}
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('nonexistent_model', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+FROM models 
+WHERE models.name = ? ORDER BY models.created_at DESC
+ LIMIT ? OFFSET ?]
+[parameters: ('versioned_model', 10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+FROM metrics
+ LIMIT ? OFFSET ?]
+[parameters: (2, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
+FROM metrics 
+WHERE metrics.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/metrics/log "HTTP/1.1 400 Bad Request"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics/accuracy "HTTP/1.1 200 OK"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/invalid_endpoint "HTTP/1.1 404 Not Found"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: DELETE http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 405 Method Not Allowed"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+FROM pipelines
+ LIMIT ? OFFSET ?]
+[parameters: (10, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
+2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
