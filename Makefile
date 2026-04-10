@@ -70,6 +70,10 @@ server: ## Start FastAPI server
 	@echo "$(GREEN)Starting KHOps Server (http://localhost:8000)$(NC)"
 	uvicorn khops.server.app:app --reload --host 0.0.0.0 --port 8000
 
+model-server: ## Start dedicated model serving API
+	@echo "$(GREEN)Starting KHOps Model Server (http://localhost:8001)$(NC)"
+	uvicorn khops.server.serving_app:app --reload --host 0.0.0.0 --port 8001
+
 cli: ## Interactive CLI
 	@echo "$(GREEN)Starting KHOps CLI$(NC)"
 	khops

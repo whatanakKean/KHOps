@@ -12,10 +12,10 @@ logger = logging.getLogger(__name__)
 
 class RunService(BaseService[Run, RunCreate, RunUpdate]):
     """Service for run operations"""
-    
+
     def __init__(self, db: Session):
         super().__init__(db, Run)
-    
+
     async def get_by_pipeline(self, pipeline_id: int, skip: int = 0, limit: int = 10) -> List[Run]:
         """Get runs for a specific pipeline"""
         try:
@@ -23,7 +23,7 @@ class RunService(BaseService[Run, RunCreate, RunUpdate]):
         except Exception as e:
             logger.error(f"Error getting runs for pipeline: {str(e)}")
             raise
-    
+
     async def list_runs(self, skip: int = 0, limit: int = 10) -> tuple[List[Run], int]:
         """List all runs with count"""
         try:

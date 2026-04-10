@@ -8,9 +8,9 @@ from khops.db.base import Base
 
 class Pipeline(Base):
     """Pipeline model - represents an ML workflow"""
-    
+
     __tablename__ = "pipelines"
-    
+
     # Columns
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), unique=True, nullable=False, index=True)
@@ -18,13 +18,13 @@ class Pipeline(Base):
     definition = Column(JSON, nullable=False)  # Pipeline YAML as JSON
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
-    
+
     # Relationships
     runs = relationship("Run", back_populates="pipeline", cascade="all, delete-orphan")
-    
+
     def __repr__(self):
         return f"<Pipeline(id={self.id}, name='{self.name}')>"
-    
+
     def to_dict(self):
         """Convert to dictionary"""
         return {

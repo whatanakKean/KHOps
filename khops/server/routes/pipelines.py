@@ -1,10 +1,16 @@
 """Route handlers for pipelines"""
 
-from fastapi import APIRouter, HTTPException, Depends, Query
+from fastapi import APIRouter, HTTPException, Depends, Query, BackgroundTasks
 from sqlalchemy.orm import Session
 from typing import List
 from khops.server.dependencies import get_db
-from khops.server.schemas.pipeline import PipelineCreate, PipelineResponse, PipelineUpdate, PipelineListResponse
+from khops.server.schemas.pipeline import (
+    PipelineCreate,
+    PipelineResponse,
+    PipelineUpdate,
+    PipelineListResponse,
+)
+from khops.server.services.execution_service import PipelineExecutionService
 from khops.server.services.pipeline_service import PipelineService
 from khops.server.services.run_service import RunService
 from khops.db.models.run import Run
@@ -67,22 +73,32 @@ async def get_pipeline(
 @router.post("/pipelines/{pipeline_id}/execute")
 async def execute_pipeline(
     pipeline_id: int,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ):
     """Execute a pipeline"""
     try:
-        # Verify pipeline exists
         service = PipelineService(db)
         pipeline = await service.get(pipeline_id)
         if not pipeline:
             raise HTTPException(status_code=404, detail="Pipeline not found")
-        
-        # Create a new run
+
         from khops.server.schemas.run import RunCreate
+
         run_service = RunService(db)
-        run_in = RunCreate(pipeline_id=pipeline_id, status="running")
+        run_in = RunCreate(
+            pipeline_id=pipeline_id,
+            status="running",
+            logs="Pipeline execution registered.",
+        )
+
         run = await run_service.create(run_in)
-        
+        background_tasks.add_task(
+            PipelineExecutionService.execute_pipeline_background,
+            pipeline.definition,
+            run.id,
+        )
+
         return {
             "pipeline_id": pipeline_id,
             "run_id": run.id,

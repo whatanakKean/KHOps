@@ -8,6 +8,8 @@ import logging
 
 from khops.core.config import settings
 from khops.server.routes import health, metrics, models, pipelines, runs
+from khops.server.routes.observability import router as observability
+from khops.server.routes.registry import router as registry
 from khops.core.logging import setup_logging
 from khops.db.session import init_db
 from khops.db.base import Base
@@ -30,9 +32,9 @@ async def lifespan(app: FastAPI):
         logger.info("✅ Database initialized")
     except Exception as e:
         logger.error(f"❌ Error initializing database: {str(e)}")
-    
+
     yield
-    
+
     logger.info("🛑 KHOps Server shutting down...")
 
 
@@ -60,6 +62,8 @@ app.include_router(metrics.router, prefix="/api/v1", tags=["metrics"])
 app.include_router(models.router, prefix="/api/v1", tags=["models"])
 app.include_router(pipelines.router, prefix="/api/v1", tags=["pipelines"])
 app.include_router(runs.router, prefix="/api/v1", tags=["runs"])
+app.include_router(observability, prefix="/api/v1", tags=["observability"])
+app.include_router(registry, prefix="/api/v1", tags=["registry"])
 
 
 # Root endpoint
@@ -88,6 +92,7 @@ async def global_exception_handler(request, exc):
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(
         app,
         host=settings.SERVER_HOST,

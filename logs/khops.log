@@ -1,5 +1,5 @@
-2026-04-10 02:16:50 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
-You can install "python-multipart" with: 
+2026-04-10 02:16:50 - fastapi - ERROR - Form data requires "python-multipart" to be installed.
+You can install "python-multipart" with:
 
 pip install python-multipart
 
@@ -174,13 +174,13 @@ connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection re
 2026-04-10 02:42:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:41 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -188,13 +188,13 @@ FROM pipelines
 2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:41 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -212,8 +212,8 @@ FROM pipelines
 2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
 2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
-FROM pipelines 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
 WHERE pipelines.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -221,21 +221,21 @@ WHERE pipelines.id = ?
 2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
-FROM runs 
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at
+FROM runs
 WHERE runs.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:41 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
 2026-04-10 02:42:41 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:41 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:41 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -243,13 +243,13 @@ FROM runs
 2026-04-10 02:42:41 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:42 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -303,8 +303,8 @@ fastapi.exceptions.ResponseValidationError: 2 validation errors:
     GET /api/v1/runs/{run_id}
 2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
-FROM runs 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
+FROM runs
 WHERE runs.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -318,13 +318,13 @@ WHERE runs.id = ?
 2026-04-10 02:42:42 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
 2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:42 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -332,13 +332,13 @@ FROM models
 2026-04-10 02:42:42 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:42 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:42 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:42 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -398,8 +398,8 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
     GET /api/v1/models/{model_name}
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('nonexistent_model', 1, 0)]
@@ -407,8 +407,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -416,8 +416,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -425,13 +425,13 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:43 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -439,13 +439,13 @@ FROM metrics
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:43 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -453,8 +453,8 @@ FROM metrics
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
-FROM metrics 
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id
+FROM metrics
 WHERE metrics.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
@@ -473,13 +473,13 @@ WHERE metrics.id = ?]
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
 2026-04-10 02:42:43 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:43 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:43 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -489,13 +489,13 @@ FROM pipelines
 2026-04-10 02:42:43 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -503,13 +503,13 @@ FROM pipelines
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -527,8 +527,8 @@ FROM pipelines
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
-FROM pipelines 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
 WHERE pipelines.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -536,21 +536,21 @@ WHERE pipelines.id = ?
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
-FROM runs 
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at
+FROM runs
 WHERE runs.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -558,13 +558,13 @@ FROM runs
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -618,8 +618,8 @@ fastapi.exceptions.ResponseValidationError: 2 validation errors:
     GET /api/v1/runs/{run_id}
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
-FROM runs 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
+FROM runs
 WHERE runs.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -633,13 +633,13 @@ WHERE runs.id = ?
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -647,13 +647,13 @@ FROM models
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -713,8 +713,8 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
     GET /api/v1/models/{model_name}
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('nonexistent_model', 1, 0)]
@@ -722,8 +722,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -731,8 +731,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -740,13 +740,13 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -754,13 +754,13 @@ FROM metrics
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -768,8 +768,8 @@ FROM metrics
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
-FROM metrics 
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id
+FROM metrics
 WHERE metrics.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
@@ -788,13 +788,13 @@ WHERE metrics.id = ?]
 2026-04-10 02:42:50 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
 2026-04-10 02:42:50 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:42:50 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:42:50 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -848,13 +848,13 @@ FROM pipelines
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:03 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -862,13 +862,13 @@ FROM pipelines
 2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:03 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -886,8 +886,8 @@ FROM pipelines
 2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
-FROM pipelines 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
 WHERE pipelines.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -895,21 +895,21 @@ WHERE pipelines.id = ?
 2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
-FROM runs 
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at
+FROM runs
 WHERE runs.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:03 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:03 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -917,13 +917,13 @@ FROM runs
 2026-04-10 02:43:03 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:03 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:03 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:03 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -977,8 +977,8 @@ fastapi.exceptions.ResponseValidationError: 2 validation errors:
     GET /api/v1/runs/{run_id}
 2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
-FROM runs 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
+FROM runs
 WHERE runs.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -992,13 +992,13 @@ WHERE runs.id = ?
 2026-04-10 02:43:04 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
 2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:04 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1006,13 +1006,13 @@ FROM models
 2026-04-10 02:43:04 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:04 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:04 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:04 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1072,8 +1072,8 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
     GET /api/v1/models/{model_name}
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('nonexistent_model', 1, 0)]
@@ -1081,8 +1081,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -1090,8 +1090,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -1099,13 +1099,13 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:05 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1113,13 +1113,13 @@ FROM metrics
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:05 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1127,8 +1127,8 @@ FROM metrics
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
-FROM metrics 
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id
+FROM metrics
 WHERE metrics.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
@@ -1147,13 +1147,13 @@ WHERE metrics.id = ?]
 2026-04-10 02:43:05 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
 2026-04-10 02:43:05 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:43:05 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:43:05 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1383,13 +1383,13 @@ FROM pipelines
 2026-04-10 02:51:59 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1397,13 +1397,13 @@ FROM pipelines
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1421,8 +1421,8 @@ FROM pipelines
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
-FROM pipelines 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
 WHERE pipelines.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -1430,21 +1430,21 @@ WHERE pipelines.id = ?
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/9999 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at 
-FROM runs 
+[SQL: SELECT runs.id, runs.pipeline_id, runs.status, runs.start_time, runs.end_time, runs.logs, runs.meta, runs.created_at
+FROM runs
 WHERE runs.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/1/execute "HTTP/1.1 400 Bad Request"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1452,13 +1452,13 @@ FROM runs
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/runs "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run list: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.run_service - ERROR - Error listing runs: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
 FROM runs
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1512,8 +1512,8 @@ fastapi.exceptions.ResponseValidationError: 2 validation errors:
     GET /api/v1/runs/{run_id}
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Run: (sqlite3.OperationalError) no such table: runs
-[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at 
-FROM runs 
+[SQL: SELECT runs.id AS runs_id, runs.pipeline_id AS runs_pipeline_id, runs.status AS runs_status, runs.start_time AS runs_start_time, runs.end_time AS runs_end_time, runs.logs AS runs_logs, runs.meta AS runs_meta, runs.created_at AS runs_created_at
+FROM runs
 WHERE runs.id = ?
  LIMIT ? OFFSET ?]
 [parameters: (9999, 1, 0)]
@@ -1527,13 +1527,13 @@ WHERE runs.id = ?
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: PUT http://testserver/api/v1/runs/1 "HTTP/1.1 405 Method Not Allowed"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1541,13 +1541,13 @@ FROM models
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Model list: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error listing models: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
 FROM models
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1607,8 +1607,8 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
     GET /api/v1/models/{model_name}
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model by name: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('nonexistent_model', 1, 0)]
@@ -1616,8 +1616,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/nonexistent_model "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -1625,8 +1625,8 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.model_service - ERROR - Error getting model versions: (sqlite3.OperationalError) no such table: models
-[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at 
-FROM models 
+[SQL: SELECT models.id AS models_id, models.name AS models_name, models.version AS models_version, models.stage AS models_stage, models.path AS models_path, models.metrics AS models_metrics, models.meta AS models_meta, models.created_at AS models_created_at, models.updated_at AS models_updated_at
+FROM models
 WHERE models.name = ? ORDER BY models.created_at DESC
  LIMIT ? OFFSET ?]
 [parameters: ('versioned_model', 10, 0)]
@@ -1634,13 +1634,13 @@ WHERE models.name = ? ORDER BY models.created_at DESC
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/models/versioned_model/versions "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1648,13 +1648,13 @@ FROM metrics
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Metrics list: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.metrics_service - ERROR - Error listing metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id 
+[SQL: SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
 FROM metrics
  LIMIT ? OFFSET ?]
 [parameters: (2, 0)]
@@ -1662,8 +1662,8 @@ FROM metrics
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/metrics?skip=0&limit=2 "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error creating Metrics: (sqlite3.OperationalError) no such table: metrics
-[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id 
-FROM metrics 
+[SQL: SELECT metrics.id, metrics.name, metrics.value, metrics.timestamp, metrics.tags, metrics.run_id
+FROM metrics
 WHERE metrics.id = ?]
 [parameters: (1,)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
@@ -1682,13 +1682,13 @@ WHERE metrics.id = ?]
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/pipelines/create "HTTP/1.1 422 Unprocessable Entity"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - khops.server.services.base_service - ERROR - Error getting Pipeline list: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 02:52:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (sqlite3.OperationalError) no such table: pipelines
-[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at 
+[SQL: SELECT pipelines.id AS pipelines_id, pipelines.name AS pipelines_name, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
 FROM pipelines
  LIMIT ? OFFSET ?]
 [parameters: (10, 0)]
@@ -1705,3 +1705,289 @@ connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection re
 
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 2026-04-10 03:06:56 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-10 03:28:09 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 03:28:09 - khops.server.app - INFO - Initializing database...
+2026-04-10 03:28:09 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 03:28:28 - khops.server.services.base_service - ERROR - Error getting Model list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 03:28:28 - khops.server.services.model_service - ERROR - Error listing models: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Starting pipeline execution: sample_pipeline
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Executing node data_load (NodeType.DATA)
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Source file not found: ./data/raw/training_data.csv. Using empty dataset.
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Completed node data_load
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Executing node data_prep (NodeType.DATA)
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - No source provided for data node; using empty dataset.
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Applied operation: drop_nulls
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Applied operation: normalize
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Completed node data_prep
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Executing node model_train (NodeType.TRAINING)
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - No valid training data found. Skipping training node.
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Completed node model_train
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Executing node model_eval (NodeType.EVALUATION)
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - No data found for evaluation. Skipping evaluation node.
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Completed node model_eval
+2026-04-10 03:29:05 - khops.pipelines.executor - INFO - Pipeline execution completed: sample_pipeline
+2026-04-10 03:30:52 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 03:30:52 - khops.server.app - INFO - Initializing database...
+2026-04-10 03:30:52 - khops.server.app - INFO - ✅ Database initialized
+2026-04-10 03:30:52 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-10 03:31:26 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-10 03:31:31 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 03:31:31 - khops.server.app - INFO - Initializing database...
+2026-04-10 03:31:31 - khops.server.app - INFO - ✅ Database initialized
+2026-04-10 03:37:33 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:42:46 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:42:47 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:44:57 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:44:58 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:45:05 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:45:05 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:49:36 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:49:38 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:52:38 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:52:39 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Starting pipeline execution: sample_pipeline
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Executing node data_load (NodeType.DATA)
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Loading data from source: ./examples/data/raw/training_data.csv
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Completed node data_load
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Executing node data_prep (NodeType.DATA)
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - No source provided for data node; using empty dataset.
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Applied operation: drop_nulls
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Applied operation: normalize
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Completed node data_prep
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Executing node model_train (NodeType.TRAINING)
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - No valid training data found. Skipping training node.
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Completed node model_train
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Executing node model_eval (NodeType.EVALUATION)
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - No data found for evaluation. Skipping evaluation node.
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Completed node model_eval
+2026-04-10 03:53:07 - khops.pipelines.executor - INFO - Pipeline execution completed: sample_pipeline
+2026-04-10 03:53:26 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:53:27 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Starting pipeline execution: sample_pipeline
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Executing node data_load (NodeType.DATA)
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Loading data from source: ./examples/data/raw/training_data.csv
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Completed node data_load
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Executing node data_prep (NodeType.DATA)
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Loaded upstream data for node data_prep
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Applied operation: drop_nulls
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Applied operation: normalize
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Completed node data_prep
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Executing node model_train (NodeType.TRAINING)
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Model trained with algorithm: random_forest
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Saved model to models/sample_pipeline_random_forest_20260410035333.pkl
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Completed node model_train
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Executing node model_eval (NodeType.EVALUATION)
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - No data found for evaluation. Skipping evaluation node.
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Completed node model_eval
+2026-04-10 03:53:33 - khops.pipelines.executor - INFO - Pipeline execution completed: sample_pipeline
+2026-04-10 03:53:45 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:53:46 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Starting pipeline execution: sample_pipeline
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Executing node data_load (NodeType.DATA)
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Loading data from source: ./examples/data/raw/training_data.csv
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Completed node data_load
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Executing node data_prep (NodeType.DATA)
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Loaded upstream data for node data_prep
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Applied operation: drop_nulls
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Applied operation: normalize
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Completed node data_prep
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Executing node model_train (NodeType.TRAINING)
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Model trained with algorithm: random_forest
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Saved model to models/sample_pipeline_random_forest_20260410035352.pkl
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Completed node model_train
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Executing node model_eval (NodeType.EVALUATION)
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Evaluation metrics computed.
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Completed node model_eval
+2026-04-10 03:53:52 - khops.pipelines.executor - INFO - Pipeline execution completed: sample_pipeline
+2026-04-10 03:54:16 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:54:18 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:04 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:05 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:06 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:07 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:11 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:12 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:12 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:13 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:19 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:20 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:20 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:21 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:28 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:29 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:29 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:30 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:34 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:35 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:41 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:43 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:48 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:50 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 03:59:58 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 03:59:59 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:08 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:10 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:17 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:18 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:26 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:27 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:36 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:39 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:47 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:48 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:00:54 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:00:55 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:01 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:02 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:16 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:17 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:29 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:30 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:37 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:38 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:45 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:46 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:50 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:51 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:01:56 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:01:57 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:02:54 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:02:55 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:30 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:31 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:31 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:32 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:42 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:43 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:43 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:44 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:51 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:52 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:03:55 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:03:57 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:04:02 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:04:04 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:04:16 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:04:19 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:04:33 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:04:35 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:08 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:10 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:11 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:13 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:13 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:16 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:16 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:18 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:22 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:24 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:24 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:27 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:08:38 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:08:41 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:11:38 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 04:11:38 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/registry/stats "HTTP/1.1 200 OK"
+2026-04-10 04:11:38 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 04:11:38 - khops.server.services.base_service - INFO - Created Model 2
+2026-04-10 04:11:38 - httpx - INFO - HTTP Request: POST http://testserver/api/v1/models/register "HTTP/1.1 200 OK"
+2026-04-10 04:11:38 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 04:11:38 - khops.server.routes.registry - ERROR - Error searching models: 1 validation error for ModelListResponse
+models.0.metadata
+  Input should be a valid dictionary [type=dict_type, input_value=MetaData(), input_type=MetaData]
+    For further information visit https://errors.pydantic.dev/2.12/v/dict_type
+2026-04-10 04:11:38 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/registry/search?q=api-test "HTTP/1.1 500 Internal Server Error"
+2026-04-10 04:11:38 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 04:11:38 - khops.server.routes.registry - ERROR - Error getting model metadata: type object 'Run' has no attribute 'model_id'
+2026-04-10 04:11:38 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/registry/models/api-test-model/metadata "HTTP/1.1 500 Internal Server Error"
+2026-04-10 04:11:38 - asyncio - DEBUG - Using selector: EpollSelector
+2026-04-10 04:11:38 - khops.server.services.base_service - INFO - Created ModelPromotion 2
+2026-04-10 04:11:38 - khops.server.services.model_service - INFO - Promoted model api-test-model/1.0.0 to staging
+2026-04-10 04:11:38 - khops.server.app - ERROR - Unhandled exception: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 105, in promote_model
+    POST /api/v1/models/{model_name}/promote
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 695, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'dict_type', 'loc': ('response', 'metadata'), 'msg': 'Input should be a valid dictionary', 'input': MetaData()}
+
+  File "/workspaces/KHOps/khops/server/routes/models.py", line 105, in promote_model
+    POST /api/v1/models/{model_name}/promote
+2026-04-10 04:12:08 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:10 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:12:14 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:16 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:12:22 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:24 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:12:30 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:32 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:12:47 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:49 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:12:56 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:12:58 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:13:21 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:13:23 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:13:36 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:13:38 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:14:44 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:14:46 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:22:30 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:22:37 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:22:37 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:22:42 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:22:42 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:22:45 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:22:45 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:22:48 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:22:48 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:22:50 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:23:12 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...
+2026-04-10 04:23:12 - khops.server.serving_app - INFO - 🛑 KHOps Model Serving shutting down...
+2026-04-10 04:23:14 - khops.server.serving_app - INFO - 🚀 KHOps Model Serving starting up...

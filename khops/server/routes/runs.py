@@ -81,14 +81,14 @@ async def cancel_run(
         run = await service.get(run_id)
         if not run:
             raise HTTPException(status_code=404, detail="Run not found")
-        
+
         if run.status == "completed":
             raise HTTPException(status_code=400, detail="Cannot cancel completed run")
-        
+
         # Update run status to cancelled
         update_data = RunUpdate(status="cancelled")
         updated_run = await service.update(run_id, update_data)
-        
+
         return {
             "run_id": run_id,
             "status": updated_run.status,
