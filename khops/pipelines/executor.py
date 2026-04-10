@@ -23,6 +23,14 @@ from sklearn.metrics import (
 from khops.pipelines.dag import DAG
 from khops.pipelines.models import PipelineConfig, NodeType
 from khops.pipelines.models import Node
+from khops.utils.artifacts import (
+    build_experiment_metadata,
+    build_model_artifact_metadata,
+    get_data_artifact_dir,
+    get_model_artifact_dir,
+    save_data_profile,
+    save_json_artifact,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -67,28 +75,44 @@ class PipelineExecutor:
         self.log(f"Pipeline execution completed: {self.config.name}")
         summary = self._summarize_context()
         aggregated_metrics = self._aggregate_metrics(summary)
+        experiment_meta = build_experiment_metadata(
+            pipeline_name=self.config.name,
+            pipeline_version=self.config.version,
+            pipeline_definition=self.config.model_dump(),
+            metrics=aggregated_metrics,
+            artifact_lineage=self._collect_artifact_lineage(),
+            parameters={
+                node_id: node_output.get("params")
+                for node_id, node_output in self.context.items()
+                if isinstance(node_output, dict)
+            },
+        )
+
+        experiment_meta["nodes_executed"] = len(self.context)
+        experiment_meta["completed_at"] = datetime.utcnow().isoformat()
 
         return {
             "status": "success",
             "logs": "\n".join(self.logs),
-            "meta": {
-                "pipeline_name": self.config.name,
-                "nodes_executed": len(self.context),
-                "completed_at": datetime.utcnow().isoformat(),
-                "metrics": aggregated_metrics,
-            },
+            "meta": experiment_meta,
             "context": summary,
         }
 
     def _execute_node(self, node: Node) -> Dict[str, Any]:
         if node.type == NodeType.DATA:
-            return self._run_data_node(node)
-        if node.type == NodeType.TRAINING:
-            return self._run_training_node(node)
-        if node.type == NodeType.EVALUATION:
-            return self._run_evaluation_node(node)
+            output = self._run_data_node(node)
+        elif node.type == NodeType.TRAINING:
+            output = self._run_training_node(node)
+        elif node.type == NodeType.EVALUATION:
+            output = self._run_evaluation_node(node)
+        else:
+            raise PipelineExecutionError(f"Unsupported node type: {node.type}")
 
-        raise PipelineExecutionError(f"Unsupported node type: {node.type}")
+        output["node_id"] = node.id
+        output["node_type"] = node.type.value
+        output["params"] = node.params or {}
+
+        return output
 
     def _run_data_node(self, node: Node) -> Dict[str, Any]:
         params = node.params
@@ -139,10 +163,19 @@ class PipelineExecutor:
             else:
                 self.log(f"Unknown data operation '{operation}' ignored")
 
+        data_artifact_dir = get_data_artifact_dir(node.id)
+        data_profile_files = save_data_profile(df, data_artifact_dir, filename=f"{node.id}_profile")
+
         return {
             "dataframe": df,
             "row_count": len(df),
             "columns": df.columns.tolist(),
+            "artifact_dir": str(data_artifact_dir),
+            "data_profile": {
+                "csv": str(data_profile_files["csv"]),
+                "json": str(data_profile_files["json"]),
+                "html": str(data_profile_files["html"]) if data_profile_files["html"] else None,
+            },
         }
 
     def _run_training_node(self, node: Node) -> Dict[str, Any]:
@@ -181,12 +214,39 @@ class PipelineExecutor:
         metrics = self._compute_metrics(y_test, predictions, target)
         model_path = self._save_model(model, algorithm)
 
+        artifact_dir = model_path.parent
+        model_profile_path = save_json_artifact(
+            {
+                "algorithm": algorithm,
+                "metrics": metrics,
+                "row_count": len(dataframe),
+                "saved_at": datetime.utcnow().isoformat(),
+                "model_path": str(model_path),
+            },
+            artifact_dir / "model_profile.json",
+        )
+
+        artifact_metadata = build_model_artifact_metadata(
+            model_path=model_path,
+            data_profile_path=None,
+            extra={
+                "pipeline_name": self.config.name,
+                "pipeline_version": self.config.version,
+                "algorithm": algorithm,
+                "saved_at": datetime.utcnow().isoformat(),
+                "model_profile": str(model_profile_path),
+            },
+        )
+
         return {
             "trained": True,
             "algorithm": algorithm,
             "model_path": str(model_path),
             "metrics": metrics,
             "row_count": len(dataframe),
+            "artifact_dir": str(artifact_dir),
+            "model_profile": str(model_profile_path),
+            "artifact_metadata": artifact_metadata,
         }
 
     def _run_evaluation_node(self, node: Node) -> Dict[str, Any]:
@@ -342,10 +402,12 @@ class PipelineExecutor:
         return metrics
 
     def _save_model(self, model: Any, algorithm: str) -> Path:
-        model_dir = Path("models")
-        model_dir.mkdir(parents=True, exist_ok=True)
+        artifact_dir = get_model_artifact_dir(
+            self.config.name,
+            datetime.utcnow().strftime("%Y%m%d%H%M%S"),
+        )
         model_path = (
-            model_dir
+            artifact_dir
             / f"{self.config.name}_{algorithm}_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}.pkl"
         )
         with open(model_path, "wb") as model_file:
@@ -366,6 +428,10 @@ class PipelineExecutor:
                     "row_count": node_output.get("row_count"),
                     "columns": node_output.get("columns"),
                     "metrics": node_output.get("metrics"),
+                    "artifact_dir": node_output.get("artifact_dir"),
+                    "model_path": node_output.get("model_path"),
+                    "data_profile": node_output.get("data_profile"),
+                    "params": node_output.get("params"),
                 }
         return summary
 
@@ -385,3 +451,26 @@ class PipelineExecutor:
                         # For now keep the latest metric value if there are duplicates
                         aggregated[name] = value
         return aggregated
+
+    def _collect_artifact_lineage(self) -> list[Dict[str, Any]]:
+        lineage: list[Dict[str, Any]] = []
+        for node_id, node_output in self.context.items():
+            if not isinstance(node_output, dict):
+                continue
+
+            artifact_entry: Dict[str, Any] = {
+                "node_id": node_id,
+                "node_type": node_output.get("node_type"),
+                "artifact_dir": node_output.get("artifact_dir"),
+                "model_path": node_output.get("model_path"),
+                "data_profile": node_output.get("data_profile"),
+                "metrics": node_output.get("metrics"),
+                "params": node_output.get("params"),
+            }
+
+            if any(
+                artifact_entry.get(key) for key in ["artifact_dir", "model_path", "data_profile"]
+            ):
+                lineage.append(artifact_entry)
+
+        return lineage

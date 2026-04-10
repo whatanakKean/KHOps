@@ -68,6 +68,7 @@ clean: ## Clean build artifacts
 
 server: ## Start FastAPI server
 	@echo "$(GREEN)Starting KHOps Server (http://localhost:8000)$(NC)"
+	python -c "from pathlib import Path; Path('data').mkdir(parents=True, exist_ok=True)"
 	uvicorn khops.server.app:app --reload --host 0.0.0.0 --port 8000
 
 model-server: ## Start dedicated model serving API
@@ -107,9 +108,9 @@ docker-clean: ## Remove Docker containers and volumes
 
 setup-dev: install lint format ## Complete dev setup with install, lint, and format
 
-db-create: ## Create database
+db-create: ## Create database or initialize local SQLite schema
 	@echo "$(BLUE)Creating database...$(NC)"
-	python -c "from khops.db.session import engine; engine.execute('CREATE DATABASE IF NOT EXISTS khops;')"
+	python -c "from khops.db.session import init_db; init_db()"
 
 db-reset: ## Reset database (WARNING: Deletes all data)
 	@echo "$(RED)Resetting database...$(NC)"

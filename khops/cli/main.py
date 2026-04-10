@@ -30,6 +30,13 @@ from khops.pipelines.parser import PipelineParser
 from khops.pipelines.executor import PipelineExecutor
 from khops.server.schemas.model import ModelCreate
 from khops.server.services.model_service import ModelService
+from khops.utils.artifacts import (
+    build_model_artifact_metadata,
+    get_data_artifact_dir,
+    get_model_artifact_dir,
+    save_data_profile,
+    save_json_artifact,
+)
 from khops.cli.models import models_cli
 from khops.cli.monitor import monitor_cli
 
@@ -331,15 +338,37 @@ def train_start(
     predictions = model.predict(X)
     metrics = _compute_metrics(y, predictions)
 
-    model_dir = Path("models")
-    model_dir.mkdir(parents=True, exist_ok=True)
+    artifact_dir = get_model_artifact_dir(name, version)
     model_path = (
         Path(save_path)
         if save_path
-        else model_dir / f"{name}_{version}_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}.pkl"
+        else artifact_dir / f"{name}_{version}_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}.pkl"
     )
+    model_path.parent.mkdir(parents=True, exist_ok=True)
     with open(model_path, "wb") as f:
         pickle.dump(model, f)
+
+    data_artifact_dir = get_data_artifact_dir(name)
+    data_profile_files = save_data_profile(
+        df, data_artifact_dir, filename=f"{name}_{version}_data_profile"
+    )
+    artifact_metadata = build_model_artifact_metadata(
+        model_path=model_path,
+        data_profile_path=data_profile_files["json"],
+        extra={
+            "project": Path.cwd().name,
+            "model_name": name,
+            "model_version": version,
+            "stage": stage,
+            "saved_at": datetime.utcnow().isoformat(),
+            "data_profile_csv": str(data_profile_files["csv"]),
+            "data_profile_json": str(data_profile_files["json"]),
+            "data_profile_html": (
+                str(data_profile_files["html"]) if data_profile_files["html"] else None
+            ),
+        },
+    )
+    save_json_artifact(artifact_metadata, artifact_dir / "artifact_metadata.json")
 
     session = SessionLocal()
     try:
@@ -350,10 +379,15 @@ def train_start(
             stage=stage,
             path=str(model_path),
             metrics=metrics,
+            metadata=artifact_metadata,
         )
         registered = asyncio.run(service.create(model_payload))
         console.print("✅ Model trained and registered successfully.", style="bold green")
         console.print(f"Model path: {registered.path}")
+        console.print(f"Artifacts folder: {artifact_dir}")
+        console.print(f"Data profile JSON: {artifact_metadata['data_profile_json']}")
+        if artifact_metadata.get("data_profile_html"):
+            console.print(f"Data profile HTML: {artifact_metadata['data_profile_html']}")
         console.print(f"Metrics: {registered.metrics}")
     finally:
         session.close()
@@ -491,6 +525,7 @@ def init():
     Path("pipelines").mkdir(exist_ok=True)
     Path("models").mkdir(exist_ok=True)
     Path("data").mkdir(exist_ok=True)
+    Path(settings.STORAGE_PATH).mkdir(parents=True, exist_ok=True)
     Path("scripts").mkdir(exist_ok=True)
     console.print("✅ Project initialized successfully!", style="bold green")
     console.print("\nExample files:")

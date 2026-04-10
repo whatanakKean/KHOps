@@ -160,6 +160,9 @@ async def get_model_artifacts(
                 "location": f"file://{model.path}" if model.path.startswith("/") else model.path,
                 "framework": model.framework,
                 "format": model.metadata.get("format", "unknown") if model.metadata else "unknown",
+                "artifact_dir": model.metadata.get("artifact_dir") if model.metadata else None,
+                "data_profile": model.metadata.get("data_profile") if model.metadata else None,
+                "artifact_metadata": model.metadata if model.metadata else None,
             },
         }
     except HTTPException:
@@ -194,15 +197,64 @@ async def get_model_lineage(
         if not model:
             raise HTTPException(status_code=404, detail="Model not found")
 
-        # Get pipelines (just list all available)
-        pipelines = db.query(Pipeline).limit(50).all()
+        lineage_runs = []
+        all_runs = db.query(Run).all()
+
+        for run in all_runs:
+            run_meta = run.meta or {}
+            run_matches = False
+
+            if run_meta.get("model_path") == model.path:
+                run_matches = True
+            if (
+                run_meta.get("model_name") == model.name
+                and run_meta.get("model_version") == model.version
+            ):
+                run_matches = True
+
+            artifact_lineage = run_meta.get("artifact_lineage", [])
+            for artifact in artifact_lineage:
+                if artifact.get("model_path") == model.path:
+                    run_matches = True
+                    break
+                model_artifact_dir = (model.meta or {}).get("artifact_dir")
+                if (
+                    artifact.get("artifact_dir") == model_artifact_dir
+                    and artifact.get("model_path") is not None
+                ):
+                    run_matches = True
+                    break
+
+            if not run_matches:
+                continue
+
+            lineage_runs.append(
+                {
+                    "run_id": run.id,
+                    "pipeline_id": run.pipeline_id,
+                    "pipeline_name": getattr(run.pipeline, "name", None),
+                    "status": run.status,
+                    "start_time": run.start_time.isoformat() if run.start_time else None,
+                    "end_time": run.end_time.isoformat() if run.end_time else None,
+                    "metrics": run_meta.get("metrics"),
+                    "artifact_lineage": artifact_lineage,
+                    "pipeline_definition": run_meta.get("pipeline_definition"),
+                }
+            )
+
+        related_pipelines = list(
+            {run["pipeline_name"] for run in lineage_runs if run["pipeline_name"]}
+        )
 
         return {
             "model_name": model.name,
             "version": model.version,
             "stage": model.stage,
             "framework": model.framework,
-            "available_pipelines": len(pipelines),
+            "registered_artifacts": model.meta or {},
+            "lineage_runs": lineage_runs,
+            "related_pipelines": related_pipelines,
+            "lineage_count": len(lineage_runs),
             "created_at": model.created_at.isoformat() if model.created_at else None,
         }
     except HTTPException:

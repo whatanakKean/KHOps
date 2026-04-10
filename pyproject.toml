@@ -65,6 +65,7 @@ dev = [
     "bandit>=1.7.5",
     "pre-commit>=3.3.0",
 ]
+eda = ["ydata-profiling>=4.0.0"]
 
 docs = [
     "sphinx>=7.0.0",

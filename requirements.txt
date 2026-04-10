@@ -1,0 +1,30 @@
+# Basic project dependencies for pip installs
+# Use this file to install the core runtime requirements.
+
+# Core dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+sqlalchemy>=2.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+click>=8.1.0
+rich>=13.0.0
+requests>=2.31.0
+httpx>=0.25.0
+python-dateutil>=2.8.2
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+psycopg2-binary>=2.9.0
+alembic>=1.12.0
+boto3>=1.28.0
+redis>=5.0.0
+prometheus-client>=0.18.0
+structlog>=23.0.0
+tenacity>=8.2.0
+
+# Optional EDA profile dependency
+ydata-profiling>=4.0.0
