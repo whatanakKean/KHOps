@@ -5,11 +5,13 @@ from .models import PipelineConfig, Node
 
 class DAGCycleError(Exception):
     """Raised when a cycle is detected in the pipeline DAG"""
+
     pass
 
 
 class DAGValidationError(Exception):
     """Raised when DAG structure is invalid"""
+
     pass
 
 
@@ -275,9 +277,9 @@ class DAG:
             Dict with various statistics
         """
         return {
-            'node_count': len(self.nodes),
-            'edge_count': len(self.edges),
-            'max_parallelism': max(len(level) for level in self.get_execution_order()),
-            'longest_path': self.get_longest_path_length(),
-            'has_cycles': self.has_cycles()
+            "node_count": len(self.nodes),
+            "edge_count": len(self.edges),
+            "max_parallelism": max(len(level) for level in self.get_execution_order()),
+            "longest_path": self.get_longest_path_length(),
+            "has_cycles": self.has_cycles(),
         }

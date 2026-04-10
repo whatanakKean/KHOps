@@ -6,11 +6,13 @@ from .models import PipelineConfig, Node, Edge, NodeType
 
 class PipelineParseError(Exception):
     """Raised when pipeline YAML cannot be parsed"""
+
     pass
 
 
 class PipelineValidationError(Exception):
     """Raised when pipeline configuration is invalid"""
+
     pass
 
 
@@ -41,7 +43,7 @@ class PipelineParser:
             raise PipelineParseError(f"Path is not a file: {file_path}")
 
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f)
         except yaml.YAMLError as e:
             raise PipelineParseError(f"Invalid YAML syntax in {file_path}: {e}")
@@ -94,27 +96,27 @@ class PipelineParser:
         """
         try:
             # Validate required fields
-            if 'name' not in data:
+            if "name" not in data:
                 raise PipelineValidationError("Pipeline must have a 'name' field")
-            if 'version' not in data:
+            if "version" not in data:
                 raise PipelineValidationError("Pipeline must have a 'version' field")
-            if 'nodes' not in data:
+            if "nodes" not in data:
                 raise PipelineValidationError("Pipeline must have a 'nodes' field")
 
             # Ensure nodes is a list
-            if not isinstance(data['nodes'], list):
+            if not isinstance(data["nodes"], list):
                 raise PipelineValidationError("'nodes' must be a list")
 
             # Ensure edges is a list if present
-            if 'edges' in data and not isinstance(data['edges'], list):
+            if "edges" in data and not isinstance(data["edges"], list):
                 raise PipelineValidationError("'edges' must be a list")
 
             # Validate node structure
-            PipelineParser._validate_nodes(data['nodes'])
+            PipelineParser._validate_nodes(data["nodes"])
 
             # Validate edge structure if present
-            if 'edges' in data:
-                PipelineParser._validate_edges(data['edges'], data['nodes'])
+            if "edges" in data:
+                PipelineParser._validate_edges(data["edges"], data["nodes"])
 
             # Create PipelineConfig (Pydantic will handle final validation)
             return PipelineConfig(**data)
@@ -134,14 +136,14 @@ class PipelineParser:
             if not isinstance(node_data, dict):
                 raise PipelineValidationError(f"Node {i} must be a dictionary")
 
-            if 'id' not in node_data:
+            if "id" not in node_data:
                 raise PipelineValidationError(f"Node {i} must have an 'id' field")
-            if 'type' not in node_data:
+            if "type" not in node_data:
                 raise PipelineValidationError(f"Node {i} must have a 'type' field")
 
             # Validate node type
             try:
-                NodeType(node_data['type'])
+                NodeType(node_data["type"])
             except ValueError:
                 valid_types = [t.value for t in NodeType]
                 raise PipelineValidationError(
@@ -152,19 +154,19 @@ class PipelineParser:
     @staticmethod
     def _validate_edges(edges_data: list, nodes_data: list) -> None:
         """Validate the structure of edges"""
-        node_ids = {node['id'] for node in nodes_data}
+        node_ids = {node["id"] for node in nodes_data}
 
         for i, edge_data in enumerate(edges_data):
             if not isinstance(edge_data, dict):
                 raise PipelineValidationError(f"Edge {i} must be a dictionary")
 
-            if 'from' not in edge_data:
+            if "from" not in edge_data:
                 raise PipelineValidationError(f"Edge {i} must have a 'from' field")
-            if 'to' not in edge_data:
+            if "to" not in edge_data:
                 raise PipelineValidationError(f"Edge {i} must have a 'to' field")
 
-            from_node = edge_data['from']
-            to_node = edge_data['to']
+            from_node = edge_data["from"]
+            to_node = edge_data["to"]
 
             if from_node not in node_ids:
                 raise PipelineValidationError(f"Edge {i} references unknown from_node: {from_node}")
@@ -172,7 +174,9 @@ class PipelineParser:
                 raise PipelineValidationError(f"Edge {i} references unknown to_node: {to_node}")
 
             if from_node == to_node:
-                raise PipelineValidationError(f"Edge {i} cannot connect node to itself: {from_node}")
+                raise PipelineValidationError(
+                    f"Edge {i} cannot connect node to itself: {from_node}"
+                )
 
     @staticmethod
     def validate_pipeline_file(file_path: Union[str, Path]) -> bool:
@@ -200,24 +204,24 @@ class PipelineParser:
             Dict with basic pipeline info (name, version, node count, etc.)
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f)
 
             return {
-                'name': data.get('name', 'unknown'),
-                'version': data.get('version', 'unknown'),
-                'description': data.get('description', ''),
-                'node_count': len(data.get('nodes', [])),
-                'edge_count': len(data.get('edges', [])),
-                'valid': True
+                "name": data.get("name", "unknown"),
+                "version": data.get("version", "unknown"),
+                "description": data.get("description", ""),
+                "node_count": len(data.get("nodes", [])),
+                "edge_count": len(data.get("edges", [])),
+                "valid": True,
             }
         except Exception as e:
             return {
-                'name': 'unknown',
-                'version': 'unknown',
-                'description': '',
-                'node_count': 0,
-                'edge_count': 0,
-                'valid': False,
-                'error': str(e)
+                "name": "unknown",
+                "version": "unknown",
+                "description": "",
+                "node_count": 0,
+                "edge_count": 0,
+                "valid": False,
+                "error": str(e),
             }

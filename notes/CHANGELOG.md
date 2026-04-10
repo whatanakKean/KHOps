@@ -104,7 +104,7 @@
 - ✅ `khops/db/base.py` - SQLAlchemy declarative base
 - ✅ `khops/db/session.py` - Database engine + SessionLocal factory
 - ✅ `khops/db/models/pipeline.py` - Pipeline ORM model
-- ✅ `khops/db/models/run.py` - Run ORM model  
+- ✅ `khops/db/models/run.py` - Run ORM model
 - ✅ `khops/db/models/model.py` - Model registry ORM
 - ✅ `khops/db/models/metrics.py` - Metrics ORM model
 - ✅ All relationships configured (Pipeline→Run, Run→Metrics)
@@ -157,7 +157,7 @@
 
 #### Database Migrations
 - [ ] Alembic initialization
-- [ ] Initial migration creation  
+- [ ] Initial migration creation
 - [ ] Migration testing
 
 #### Documentation

@@ -8,7 +8,7 @@ nodes:
   - id: data_load
     type: data
     params:
-      source: "./data/raw/training_data.csv"
+      source: "./examples/data/raw/training_data.csv"
 
   - id: data_prep
     type: data
@@ -21,12 +21,14 @@ nodes:
     type: training
     params:
       algorithm: "random_forest"
+      target: "target"
       n_estimators: 100
       max_depth: 10
 
   - id: model_eval
     type: evaluation
     params:
+      target: "target"
       metrics:
         - accuracy
         - precision

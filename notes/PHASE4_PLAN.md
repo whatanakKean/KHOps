@@ -42,7 +42,7 @@
 **AutoML Pipeline Features**:
 - **Data Selection**: CSV, JSON, database queries, or existing datasets
 - **Preprocessing**: Automatic feature engineering, scaling, encoding, imputation
-- **Model Candidates**: 
+- **Model Candidates**:
   - **Regression**: Linear Regression, Random Forest, XGBoost, Neural Networks
   - **Classification**: Logistic Regression, Random Forest, SVM, XGBoost, Neural Networks
   - **Clustering**: K-Means, DBSCAN, Gaussian Mixture, Hierarchical
@@ -922,4 +922,3 @@ This phase will enhance KHOps with advanced backend features accessible through 
 
 **Phase 4 Complete**: Expected date based on current velocity
 **Estimated**: 4-5 development sessions from Phase 3 completion
-

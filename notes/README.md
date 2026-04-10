@@ -1,7 +1,7 @@
 # 📚 Notes Folder Guide
 
-**Location**: `/workspaces/KHOps/notes/`  
-**Total Size**: ~67KB of comprehensive documentation  
+**Location**: `/workspaces/KHOps/notes/`
+**Total Size**: ~67KB of comprehensive documentation
 **Files**: 7 markdown documents
 
 ---

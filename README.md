@@ -53,3 +53,43 @@ khops/
 ├── db/              # SQLAlchemy models and migrations
 ├── sdk/             # Client-side library for experiment tracking
 └── web/             # Next.js/React frontend (Synthetix Dark UI)
+
+---
+
+## 🚀 Quick Start
+
+1. Install dependencies:
+   ```bash
+   pip install -e ".[dev]"
+   ```
+
+2. Start the main API server:
+   ```bash
+   make server
+   ```
+
+3. Start the dedicated model serving API:
+   ```bash
+   make model-server
+   ```
+
+4. Run a pipeline from CLI:
+   ```bash
+   python -m khops.cli.main run examples/pipelines/sample_pipeline.yaml
+   ```
+
+5. Use the model serving route once a model is registered:
+   - `POST http://localhost:8001/api/v1/serve/{model_name}`
+   - Body format:
+     ```json
+     {
+       "features": [
+         {"feature1": 1.0, "feature2": 2.0}
+       ]
+     }
+     ```
+
+6. Launch the full CLI help menu:
+   ```bash
+   python -m khops.cli.main --help
+   ```

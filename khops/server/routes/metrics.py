@@ -40,11 +40,7 @@ async def get_metric(
     """Get specific metric history"""
     try:
         service = MetricsService(db)
-        metrics = await service.get_all(
-            skip=skip,
-            limit=limit,
-            filters={"name": metric_name}
-        )
+        metrics = await service.get_all(skip=skip, limit=limit, filters={"name": metric_name})
         return metrics
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

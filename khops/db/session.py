@@ -36,6 +36,7 @@ def get_db() -> Session:
 def init_db():
     """Initialize database tables"""
     from khops.db.base import Base
+
     logger.info("Creating database tables...")
     Base.metadata.create_all(bind=engine)
     logger.info("✅ Database tables created")

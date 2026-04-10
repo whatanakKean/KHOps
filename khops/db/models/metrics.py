@@ -8,9 +8,9 @@ from khops.db.base import Base
 
 class Metrics(Base):
     """Metrics model - stores performance metrics"""
-    
+
     __tablename__ = "metrics"
-    
+
     # Columns
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False, index=True)
@@ -18,13 +18,13 @@ class Metrics(Base):
     timestamp = Column(DateTime, server_default=func.now(), nullable=False, index=True)
     tags = Column(JSON, nullable=True)  # Additional metadata
     run_id = Column(Integer, ForeignKey("runs.id"), nullable=True, index=True)
-    
+
     # Relationships
     run = relationship("Run", back_populates="metrics")
-    
+
     def __repr__(self):
         return f"<Metrics(id={self.id}, name='{self.name}', value={self.value})>"
-    
+
     def to_dict(self):
         """Convert to dictionary"""
         return {

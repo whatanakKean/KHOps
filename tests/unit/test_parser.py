@@ -28,17 +28,14 @@ class TestPipelineModels:
 
     def test_pipeline_config_valid(self):
         """Test creating a valid pipeline config"""
-        nodes = [
-            Node(id="node1", type=NodeType.DATA),
-            Node(id="node2", type=NodeType.TRAINING)
-        ]
+        nodes = [Node(id="node1", type=NodeType.DATA), Node(id="node2", type=NodeType.TRAINING)]
         edges = [Edge(from_node="node1", to_node="node2")]
         config = PipelineConfig(
             name="test_pipeline",
             version="1.0",
             description="Test pipeline",
             nodes=nodes,
-            edges=edges
+            edges=edges,
         )
         assert config.name == "test_pipeline"
         assert config.version == "1.0"
@@ -49,7 +46,7 @@ class TestPipelineModels:
         """Test pipeline config with duplicate node IDs"""
         nodes = [
             Node(id="node1", type=NodeType.DATA),
-            Node(id="node1", type=NodeType.TRAINING)  # Duplicate ID
+            Node(id="node1", type=NodeType.TRAINING),  # Duplicate ID
         ]
         with pytest.raises(ValueError, match="Duplicate node IDs found"):
             PipelineConfig(name="test", version="1.0", nodes=nodes)
@@ -66,12 +63,9 @@ class TestPipelineModels:
         nodes = [
             Node(id="node1", type=NodeType.DATA),
             Node(id="node2", type=NodeType.TRAINING),
-            Node(id="node3", type=NodeType.EVALUATION)
+            Node(id="node3", type=NodeType.EVALUATION),
         ]
-        edges = [
-            Edge(from_node="node1", to_node="node2"),
-            Edge(from_node="node2", to_node="node3")
-        ]
+        edges = [Edge(from_node="node1", to_node="node2"), Edge(from_node="node2", to_node="node3")]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
         # Test get_node_by_id
@@ -194,7 +188,7 @@ class TestPipelineParser:
             type: data
         """
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.yaml', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
             f.write(yaml_content)
             temp_path = f.name
 
@@ -223,18 +217,18 @@ class TestPipelineParser:
             to_node: node2
         """
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.yaml', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
             f.write(yaml_content)
             temp_path = f.name
 
         try:
             info = PipelineParser.get_pipeline_info(temp_path)
-            assert info['name'] == 'test_pipeline'
-            assert info['version'] == '1.0'
-            assert info['description'] == 'Test description'
-            assert info['node_count'] == 2
-            assert info['edge_count'] == 1
-            assert info['valid'] is True
+            assert info["name"] == "test_pipeline"
+            assert info["version"] == "1.0"
+            assert info["description"] == "Test description"
+            assert info["node_count"] == 2
+            assert info["edge_count"] == 1
+            assert info["valid"] is True
         finally:
             os.unlink(temp_path)
 
@@ -247,12 +241,9 @@ class TestDAG:
         nodes = [
             Node(id="node1", type=NodeType.DATA),
             Node(id="node2", type=NodeType.TRAINING),
-            Node(id="node3", type=NodeType.EVALUATION)
+            Node(id="node3", type=NodeType.EVALUATION),
         ]
-        edges = [
-            Edge(from_node="node1", to_node="node2"),
-            Edge(from_node="node2", to_node="node3")
-        ]
+        edges = [Edge(from_node="node1", to_node="node2"), Edge(from_node="node2", to_node="node3")]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
         dag = DAG(config)
@@ -261,13 +252,10 @@ class TestDAG:
 
     def test_dag_cycle_detection(self):
         """Test cycle detection in DAG"""
-        nodes = [
-            Node(id="node1", type=NodeType.DATA),
-            Node(id="node2", type=NodeType.TRAINING)
-        ]
+        nodes = [Node(id="node1", type=NodeType.DATA), Node(id="node2", type=NodeType.TRAINING)]
         edges = [
             Edge(from_node="node1", to_node="node2"),
-            Edge(from_node="node2", to_node="node1")  # Creates cycle
+            Edge(from_node="node2", to_node="node1"),  # Creates cycle
         ]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
@@ -280,12 +268,12 @@ class TestDAG:
             Node(id="data", type=NodeType.DATA),
             Node(id="preprocess", type=NodeType.DATA),
             Node(id="train", type=NodeType.TRAINING),
-            Node(id="eval", type=NodeType.EVALUATION)
+            Node(id="eval", type=NodeType.EVALUATION),
         ]
         edges = [
             Edge(from_node="data", to_node="preprocess"),
             Edge(from_node="preprocess", to_node="train"),
-            Edge(from_node="train", to_node="eval")
+            Edge(from_node="train", to_node="eval"),
         ]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
@@ -305,12 +293,12 @@ class TestDAG:
             Node(id="data1", type=NodeType.DATA),
             Node(id="data2", type=NodeType.DATA),
             Node(id="merge", type=NodeType.DATA),
-            Node(id="train", type=NodeType.TRAINING)
+            Node(id="train", type=NodeType.TRAINING),
         ]
         edges = [
             Edge(from_node="data1", to_node="merge"),
             Edge(from_node="data2", to_node="merge"),
-            Edge(from_node="merge", to_node="train")
+            Edge(from_node="merge", to_node="train"),
         ]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
@@ -328,12 +316,9 @@ class TestDAG:
         nodes = [
             Node(id="a", type=NodeType.DATA),
             Node(id="b", type=NodeType.DATA),
-            Node(id="c", type=NodeType.TRAINING)
+            Node(id="c", type=NodeType.TRAINING),
         ]
-        edges = [
-            Edge(from_node="a", to_node="c"),
-            Edge(from_node="b", to_node="c")
-        ]
+        edges = [Edge(from_node="a", to_node="c"), Edge(from_node="b", to_node="c")]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
         dag = DAG(config)
@@ -348,12 +333,9 @@ class TestDAG:
         nodes = [
             Node(id="a", type=NodeType.DATA),
             Node(id="b", type=NodeType.DATA),
-            Node(id="c", type=NodeType.TRAINING)
+            Node(id="c", type=NodeType.TRAINING),
         ]
-        edges = [
-            Edge(from_node="a", to_node="b"),
-            Edge(from_node="b", to_node="c")
-        ]
+        edges = [Edge(from_node="a", to_node="b"), Edge(from_node="b", to_node="c")]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
         dag = DAG(config)
@@ -367,18 +349,15 @@ class TestDAG:
         nodes = [
             Node(id="a", type=NodeType.DATA),
             Node(id="b", type=NodeType.DATA),
-            Node(id="c", type=NodeType.TRAINING)
+            Node(id="c", type=NodeType.TRAINING),
         ]
-        edges = [
-            Edge(from_node="a", to_node="b"),
-            Edge(from_node="b", to_node="c")
-        ]
+        edges = [Edge(from_node="a", to_node="b"), Edge(from_node="b", to_node="c")]
         config = PipelineConfig(name="test", version="1.0", nodes=nodes, edges=edges)
 
         dag = DAG(config)
         stats = dag.get_stats()
 
-        assert stats['node_count'] == 3
-        assert stats['edge_count'] == 2
-        assert stats['has_cycles'] is False
-        assert stats['longest_path'] == 2  # a -> b -> c
+        assert stats["node_count"] == 3
+        assert stats["edge_count"] == 2
+        assert stats["has_cycles"] is False
+        assert stats["longest_path"] == 2  # a -> b -> c

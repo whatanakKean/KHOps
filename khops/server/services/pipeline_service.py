@@ -13,10 +13,10 @@ logger = logging.getLogger(__name__)
 
 class PipelineService(BaseService[Pipeline, PipelineCreate, PipelineUpdate]):
     """Service for pipeline operations"""
-    
+
     def __init__(self, db: Session):
         super().__init__(db, Pipeline)
-    
+
     async def get_by_name(self, name: str) -> Optional[Pipeline]:
         """Get pipeline by name"""
         try:
@@ -24,7 +24,7 @@ class PipelineService(BaseService[Pipeline, PipelineCreate, PipelineUpdate]):
         except Exception as e:
             logger.error(f"Error getting pipeline by name: {str(e)}")
             raise
-    
+
     async def list_pipelines(self, skip: int = 0, limit: int = 10) -> tuple[List[Pipeline], int]:
         """List all pipelines with count"""
         try:

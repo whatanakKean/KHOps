@@ -12,10 +12,10 @@ logger = logging.getLogger(__name__)
 
 class MetricsService(BaseService[Metrics, MetricsCreate, MetricsCreate]):
     """Service for metrics operations"""
-    
+
     def __init__(self, db: Session):
         super().__init__(db, Metrics)
-    
+
     async def get_by_run(self, run_id: int, skip: int = 0, limit: int = 10) -> List[Metrics]:
         """Get metrics for a specific run"""
         try:
@@ -23,7 +23,7 @@ class MetricsService(BaseService[Metrics, MetricsCreate, MetricsCreate]):
         except Exception as e:
             logger.error(f"Error getting metrics for run: {str(e)}")
             raise
-    
+
     async def list_metrics(self, skip: int = 0, limit: int = 10) -> tuple[List[Metrics], int]:
         """List all metrics with count"""
         try:
