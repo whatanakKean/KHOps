@@ -1696,3 +1696,12 @@ FROM pipelines
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines "HTTP/1.1 500 Internal Server Error"
 2026-04-10 02:52:12 - asyncio - DEBUG - Using selector: EpollSelector
 2026-04-10 02:52:12 - httpx - INFO - HTTP Request: GET http://testserver/api/v1/pipelines/1 "HTTP/1.1 200 OK"
+2026-04-10 02:57:26 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-10 02:57:26 - khops.server.app - INFO - Initializing database...
+2026-04-10 02:57:26 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-10 03:06:56 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
