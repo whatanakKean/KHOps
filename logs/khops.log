@@ -1,0 +1,6 @@
+2026-04-10 02:16:50 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2026-04-10 02:18:03 - khops.server.app - INFO - 🚀 KHOps Server starting up...

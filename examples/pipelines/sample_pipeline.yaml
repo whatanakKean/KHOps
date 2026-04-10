@@ -1,0 +1,52 @@
+"""Sample pipeline configuration"""
+
+name: sample_pipeline
+description: Simple data-to-model pipeline
+version: "1.0"
+
+nodes:
+  - id: data_load
+    type: data
+    config:
+      source: "./data/raw/training_data.csv"
+    
+  - id: data_prep
+    type: data
+    config:
+      operations:
+        - drop_nulls
+        - normalize
+    
+  - id: model_train
+    type: training
+    config:
+      algorithm: "random_forest"
+      params:
+        n_estimators: 100
+        max_depth: 10
+    
+  - id: model_eval
+    type: evaluation
+    config:
+      metrics:
+        - accuracy
+        - precision
+        - recall
+
+edges:
+  - from: data_load
+    to: data_prep
+  
+  - from: data_prep
+    to: model_train
+  
+  - from: model_train
+    to: model_eval
+
+schedule:
+  enabled: false
+  # cron: "0 0 * * *"  # Daily at midnight
+
+execution:
+  timeout: 3600
+  max_retries: 3
