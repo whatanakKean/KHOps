@@ -1,8 +1,9 @@
 """Model API Schemas"""
 
-from pydantic import BaseModel, Field, ConfigDict, field_serializer
-from typing import Optional, Dict, Any
 from datetime import datetime
+from typing import Any, Dict, Optional
+
+from pydantic import BaseModel, ConfigDict, Field, field_serializer
 
 
 class ModelBase(BaseModel):
@@ -18,6 +19,9 @@ class ModelBase(BaseModel):
 class ModelCreate(ModelBase):
     """Schema for creating a model"""
 
+    project_id: Optional[int] = None
+    pipeline_id: Optional[int] = None
+    run_id: Optional[int] = None
     path: Optional[str] = None
     framework: Optional[str] = None
     metrics: Optional[Dict[str, Any]] = None
@@ -39,6 +43,10 @@ class ModelResponse(ModelBase):
     """Schema for model response"""
 
     id: int
+    project_id: Optional[int] = None
+    pipeline_id: Optional[int] = None
+    run_id: Optional[int] = None
+    api_port: Optional[int] = None
     path: Optional[str] = None
     framework: Optional[str] = None
     metrics: Optional[Dict[str, Any]] = None

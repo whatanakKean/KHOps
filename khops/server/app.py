@@ -1,20 +1,22 @@
 """FastAPI Application"""
 
+import logging
 from contextlib import asynccontextmanager
+
+import sqlalchemy
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-import logging
 
+import khops.db.models
 from khops.core.config import settings
+from khops.core.logging import setup_logging
+from khops.db.base import Base
+from khops.db.session import engine, init_db
 from khops.server.routes import health, metrics, models, pipelines, runs
 from khops.server.routes.observability import router as observability
+from khops.server.routes.projects import router as projects
 from khops.server.routes.registry import router as registry
-from khops.core.logging import setup_logging
-from khops.db.session import init_db
-from khops.db.base import Base
-from khops.db.session import engine
-import sqlalchemy
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -60,6 +62,7 @@ app.add_middleware(
 app.include_router(health.router, prefix="/api/v1", tags=["health"])
 app.include_router(metrics.router, prefix="/api/v1", tags=["metrics"])
 app.include_router(models.router, prefix="/api/v1", tags=["models"])
+app.include_router(projects, prefix="/api/v1", tags=["projects"])
 app.include_router(pipelines.router, prefix="/api/v1", tags=["pipelines"])
 app.include_router(runs.router, prefix="/api/v1", tags=["runs"])
 app.include_router(observability, prefix="/api/v1", tags=["observability"])

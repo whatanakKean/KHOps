@@ -1,0 +1,114 @@
+name: advanced-classification-credit-risk
+description: Advanced classification pipeline for credit risk with custom preprocessing and ensemble ranking
+version: "1.0"
+
+data:
+  source_type: csv
+  source_path: data/credit_risk.csv
+  target_column: default
+  feature_columns:
+    - age
+    - income
+    - credit_score
+    - employment_years
+    - loan_amount
+    - num_accounts
+    - payment_history
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  stratified: true
+
+preprocessing:
+  handle_missing: true
+  missing_strategy: median
+  remove_duplicates: true
+  handle_outliers: true
+  outlier_method: isolation_forest
+  encode_categorical: true
+  encoding_method: onehot
+  scale_features: true
+  scaler_type: robust
+  feature_selection: true
+  feature_selection_method: mutual_info
+  n_features_to_select: 10
+
+models:
+  - id: rf_tuned
+    model_type: random_forest
+    hyperparameters:
+      n_estimators: 200
+      max_depth: 15
+      min_samples_split: 3
+      min_samples_leaf: 1
+      max_features: sqrt
+    random_state: 42
+    n_jobs: -1
+
+  - id: xgb_tuned
+    model_type: xgboost
+    hyperparameters:
+      n_estimators: 150
+      learning_rate: 0.05
+      max_depth: 8
+      subsample: 0.9
+      colsample_bytree: 0.8
+      reg_alpha: 0.1
+      reg_lambda: 1.0
+    random_state: 42
+    n_jobs: -1
+
+  - id: lgb_tuned
+    model_type: lightgbm
+    hyperparameters:
+      n_estimators: 150
+      learning_rate: 0.05
+      num_leaves: 50
+      feature_fraction: 0.8
+      bagging_fraction: 0.8
+      min_data_in_leaf: 20
+    random_state: 42
+
+  - id: cb_tuned
+    model_type: catboost
+    hyperparameters:
+      iterations: 150
+      learning_rate: 0.05
+      depth: 6
+      subsample: 0.8
+
+evaluation:
+  task_type: classification
+  classification_metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - auc_roc
+  validation_method: stratified_k_fold
+  n_splits: 5
+  primary_metric: auc_roc
+  threshold_optimization: true
+
+ranking:
+  ranking_method: weighted_score
+  metric_weights:
+    auc_roc: 0.5
+    f1: 0.3
+    precision: 0.2
+  select_top_k: 3
+  save_top_k_models: true
+
+serving:
+  serving_type: api
+  api:
+    enabled: true
+    port: 8001
+    max_workers: 8
+    request_timeout: 30
+    batch_prediction_timeout: 60
+  batch:
+    enabled: false
+  model_cache_ttl: 3600
+  enable_monitoring: true
+  enable_drift_detection: true

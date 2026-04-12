@@ -1,14 +1,17 @@
 """Pipeline API Schemas"""
 
-from pydantic import BaseModel, Field, ConfigDict
-from typing import Optional, Dict, Any
 from datetime import datetime
+from typing import Any, Dict, Optional
+
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class PipelineBase(BaseModel):
     """Base pipeline schema"""
 
     name: str = Field(..., min_length=1, max_length=255)
+    version: str = Field("1.0.0", min_length=1, max_length=50)
+    project_id: Optional[int] = Field(None, description="Optional project association")
     description: Optional[str] = Field(None, max_length=1000)
     definition: Dict[str, Any] = Field(..., description="Pipeline YAML as JSON/dict")
 
@@ -19,6 +22,14 @@ class PipelineCreate(PipelineBase):
     """Schema for creating a pipeline"""
 
     pass
+
+
+class PipelineUpload(BaseModel):
+    """Schema for uploading a pipeline YAML definition."""
+
+    yaml_content: str = Field(..., description="Pipeline YAML content")
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class PipelineUpdate(BaseModel):

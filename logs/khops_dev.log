@@ -1,0 +1,430 @@
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Starting pipeline execution: sample_pipeline
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Executing node data_load (NodeType.DATA)
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Loading data from source: ./examples/data/raw/training_data.csv
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved raw data artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/raw/training_data_data_load.csv
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved preprocessed data artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/preprocessed/data_load_preprocessed.csv
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved EDA artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/eda/data_load_eda.json
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Completed node data_load
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Executing node data_prep (NodeType.DATA)
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Loaded upstream data for node data_prep
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Applied operation: drop_nulls
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Applied operation: normalize
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved preprocessed data artifact for node data_prep: data/artifacts_dev/runs/run_20260412025946/data/preprocessed/data_prep_preprocessed.csv
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved EDA artifact for node data_prep: data/artifacts_dev/runs/run_20260412025946/data/eda/data_prep_eda.json
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Completed node data_prep
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Executing node model_train (NodeType.TRAINING)
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Model trained with algorithm: random_forest
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved model to /workspaces/KHOps/data/artifacts_dev/runs/run_20260412025946/models/sample_pipeline_random_forest_20260412025946.pkl
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved training metrics artifact for node model_train: data/artifacts_dev/runs/run_20260412025946/evaluation/model_train_training_metrics.json
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Completed node model_train
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Executing node model_eval (NodeType.EVALUATION)
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Evaluation metrics computed.
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Saved evaluation artifact for node model_eval: data/artifacts_dev/runs/run_20260412025946/evaluation/model_eval_evaluation_metrics.json
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Completed node model_eval
+2026-04-12 02:59:46 - khops.pipelines.executor - INFO - Pipeline execution completed: sample_pipeline
+2026-04-12 03:45:13 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-12 03:45:13 - khops.server.app - INFO - Initializing database...
+2026-04-12 03:45:13 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:45:40 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-12 03:45:44 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-12 03:45:44 - khops.server.app - INFO - Initializing database...
+2026-04-12 03:45:44 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:45:48 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:45:48 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:45:48 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:49:08 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:49:08 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:49:08 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:00 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:00 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:00 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:26 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:26 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:50:26 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:52:36 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-12 03:53:19 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-12 03:53:19 - khops.server.app - INFO - Initializing database...
+2026-04-12 03:53:19 - khops.server.app - ERROR - ❌ Error initializing database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:53:25 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:53:25 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:53:25 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:56:12 - khops.server.services.pipeline_service - ERROR - Error listing pipelines: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:56:12 - khops.server.services.base_service - ERROR - Error getting Metrics list: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:56:12 - khops.server.services.metrics_service - ERROR - Error listing metrics: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "khops_dev" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-12 03:56:36 - khops.server.app - INFO - 🛑 KHOps Server shutting down...
+2026-04-12 03:56:44 - khops.server.app - INFO - 🚀 KHOps Server starting up...
+2026-04-12 03:56:44 - khops.server.app - INFO - Initializing database...
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] {'table_name': 'projects', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [cached since 0.00523s ago] {'table_name': 'pipelines', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [cached since 0.00654s ago] {'table_name': 'runs', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [cached since 0.008612s ago] {'table_name': 'models', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [cached since 0.01024s ago] {'table_name': 'metrics', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - SELECT pg_catalog.pg_class.relname
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [cached since 0.01161s ago] {'table_name': 'model_promotions', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE projects (
+	id SERIAL NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	description TEXT,
+	created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	PRIMARY KEY (id),
+	CONSTRAINT uq_project_name UNIQUE (name)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00290s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_projects_name ON projects (name)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00023s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_projects_id ON projects (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00019s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE pipelines (
+	id SERIAL NOT NULL,
+	project_id INTEGER,
+	name VARCHAR(255) NOT NULL,
+	version VARCHAR(50) NOT NULL,
+	description TEXT,
+	definition JSON NOT NULL,
+	created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	PRIMARY KEY (id),
+	CONSTRAINT uq_pipeline_project_name_version UNIQUE (project_id, name, version),
+	FOREIGN KEY(project_id) REFERENCES projects (id)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00026s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_pipelines_id ON pipelines (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00022s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_pipelines_version ON pipelines (version)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00026s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_pipelines_project_id ON pipelines (project_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00035s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_pipelines_name ON pipelines (name)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00041s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE runs (
+	id SERIAL NOT NULL,
+	pipeline_id INTEGER NOT NULL,
+	status VARCHAR(50) NOT NULL,
+	start_time TIMESTAMP WITHOUT TIME ZONE,
+	end_time TIMESTAMP WITHOUT TIME ZONE,
+	logs TEXT,
+	meta JSON,
+	created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY(pipeline_id) REFERENCES pipelines (id)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00089s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_runs_status ON runs (status)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00030s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_runs_id ON runs (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00033s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_runs_pipeline_id ON runs (pipeline_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00021s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE models (
+	id SERIAL NOT NULL,
+	project_id INTEGER,
+	pipeline_id INTEGER,
+	run_id INTEGER,
+	name VARCHAR(255) NOT NULL,
+	version VARCHAR(50) NOT NULL,
+	stage VARCHAR(50) NOT NULL,
+	api_port INTEGER,
+	path VARCHAR(500),
+	framework VARCHAR(100),
+	metrics JSON,
+	meta JSON,
+	tags JSON,
+	created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	PRIMARY KEY (id),
+	CONSTRAINT uq_model_project_name_version UNIQUE (project_id, name, version),
+	CONSTRAINT uq_model_pipeline_name_version UNIQUE (pipeline_id, name, version),
+	FOREIGN KEY(project_id) REFERENCES projects (id),
+	FOREIGN KEY(pipeline_id) REFERENCES pipelines (id),
+	FOREIGN KEY(run_id) REFERENCES runs (id)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00030s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_project_id ON models (project_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00022s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_run_id ON models (run_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00021s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_stage ON models (stage)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00024s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_id ON models (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00021s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_pipeline_id ON models (pipeline_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00031s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_models_name ON models (name)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00026s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE metrics (
+	id SERIAL NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	value FLOAT NOT NULL,
+	timestamp TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	tags JSON,
+	run_id INTEGER,
+	PRIMARY KEY (id),
+	FOREIGN KEY(run_id) REFERENCES runs (id)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00085s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_metrics_run_id ON metrics (run_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00021s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_metrics_timestamp ON metrics (timestamp)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00024s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_metrics_name ON metrics (name)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00023s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_metrics_id ON metrics (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00021s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO -
+CREATE TABLE model_promotions (
+	id SERIAL NOT NULL,
+	model_id INTEGER NOT NULL,
+	from_stage VARCHAR(50) NOT NULL,
+	to_stage VARCHAR(50) NOT NULL,
+	reason TEXT,
+	promoted_by VARCHAR(100),
+	previous_model_id INTEGER,
+	promoted_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY(model_id) REFERENCES models (id)
+)
+
+
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00027s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_model_promotions_promoted_at ON model_promotions (promoted_at)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00027s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_model_promotions_id ON model_promotions (id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00027s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_model_promotions_model_id ON model_promotions (model_id)
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - [no key 0.00061s] {}
+2026-04-12 03:56:44 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-12 03:56:44 - khops.server.app - INFO - ✅ Database initialized
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - [generated in 0.00033s] {'param_1': 50, 'param_2': 0}
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines) AS anon_1
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - [generated in 0.00028s] {}
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - [generated in 0.00034s] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - [generated in 0.00025s] {}
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:56:55 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.456s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.451s ago] {}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.463s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.46s ago] {}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.491s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - [cached since 9.493s ago] {}
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:04 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.8s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.8s ago] {}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.82s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.82s ago] {}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.84s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - [cached since 29.83s ago] {}
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:25 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - [cached since 31.95s ago] {'param_1': 50, 'param_2': 0}
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines) AS anon_1
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - [cached since 31.95s ago] {}
+2026-04-12 03:57:27 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - [cached since 44.5s ago] {'param_1': 50, 'param_2': 0}
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT pipelines.id AS pipelines_id, pipelines.project_id AS pipelines_project_id, pipelines.name AS pipelines_name, pipelines.version AS pipelines_version, pipelines.description AS pipelines_description, pipelines.definition AS pipelines_definition, pipelines.created_at AS pipelines_created_at, pipelines.updated_at AS pipelines_updated_at
+FROM pipelines) AS anon_1
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - [cached since 44.5s ago] {}
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics
+ LIMIT %(param_1)s OFFSET %(param_2)s
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - [cached since 44.48s ago] {'param_1': 1000, 'param_2': 0}
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1
+FROM (SELECT metrics.id AS metrics_id, metrics.name AS metrics_name, metrics.value AS metrics_value, metrics.timestamp AS metrics_timestamp, metrics.tags AS metrics_tags, metrics.run_id AS metrics_run_id
+FROM metrics) AS anon_1
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - [cached since 44.48s ago] {}
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-12 03:57:39 - sqlalchemy.engine.Engine - INFO - ROLLBACK

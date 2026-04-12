@@ -1,15 +1,17 @@
 """Route handlers for model registry operations"""
 
-from fastapi import APIRouter, HTTPException, Depends, Query
+import logging
+from typing import Any, Dict, List, Optional
+
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from typing import List, Optional, Dict, Any
+
 from khops.db.models.model import Model
 from khops.db.models.pipeline import Pipeline
 from khops.db.models.run import Run
 from khops.server.dependencies import get_db
-from khops.server.schemas.model import ModelResponse, ModelListResponse
+from khops.server.schemas.model import ModelListResponse, ModelResponse
 from khops.server.services.model_service import ModelService
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -152,14 +154,14 @@ async def get_model_artifacts(
             "stage": model.stage,
             "path": model.path,
             "framework": model.framework,
-            "size_bytes": model.metadata.get("size_bytes") if model.metadata else None,
-            "hash": model.metadata.get("hash") if model.metadata else None,
+            "size_bytes": model.meta.get("size_bytes") if model.meta else None,
+            "hash": model.meta.get("hash") if model.meta else None,
             "metrics": model.metrics or {},
             "created_at": model.created_at,
             "artifact_info": {
                 "location": f"file://{model.path}" if model.path.startswith("/") else model.path,
                 "framework": model.framework,
-                "format": model.metadata.get("format", "unknown") if model.metadata else "unknown",
+                "format": model.meta.get("format", "unknown") if model.meta else "unknown",
             },
         }
     except HTTPException:
@@ -357,7 +359,7 @@ async def export_model_metadata(
                 "created_at": model.created_at.isoformat() if model.created_at else None,
                 "updated_at": model.updated_at.isoformat() if model.updated_at else None,
                 "metrics": model.metrics or {},
-                "metadata": model.metadata or {},
+                "metadata": model.meta or {},
                 "tags": model.tags or [],
                 "promotion_history": [
                     {

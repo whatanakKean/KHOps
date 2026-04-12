@@ -1,8 +1,10 @@
 """Run Database Model"""
 
-from sqlalchemy import Column, Integer, String, DateTime, Text, JSON, ForeignKey, func
-from sqlalchemy.orm import relationship
 from datetime import datetime
+
+from sqlalchemy import JSON, Column, DateTime, ForeignKey, Integer, String, Text, func
+from sqlalchemy.orm import relationship
+
 from khops.db.base import Base
 
 
@@ -25,6 +27,7 @@ class Run(Base):
 
     # Relationships
     pipeline = relationship("Pipeline", back_populates="runs")
+    models = relationship("Model", back_populates="run", cascade="all, delete-orphan")
     metrics = relationship("Metrics", back_populates="run", cascade="all, delete-orphan")
 
     def __repr__(self):

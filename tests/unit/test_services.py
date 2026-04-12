@@ -14,21 +14,20 @@ from sqlalchemy.orm import Session
 # Mark all tests in this module as async
 pytestmark = pytest.mark.asyncio
 
-from khops.server.services.pipeline_service import PipelineService
-from khops.server.services.run_service import RunService
-from khops.server.services.model_service import ModelService
-from khops.server.services.metrics_service import MetricsService
-
-from khops.server.schemas.pipeline import PipelineCreate, PipelineUpdate
-from khops.server.schemas.run import RunCreate, RunUpdate
-from khops.server.schemas.model import ModelCreate, ModelUpdate
-from khops.server.schemas.metrics import MetricsCreate
-
+from khops.db.models.metrics import Metrics
+from khops.db.models.model import Model
 from khops.db.models.pipeline import Pipeline
 from khops.db.models.run import Run
-from khops.db.models.model import Model
-from khops.db.models.metrics import Metrics
-
+from khops.server.schemas.metrics import MetricsCreate
+from khops.server.schemas.model import ModelCreate, ModelUpdate
+from khops.server.schemas.pipeline import PipelineCreate, PipelineUpdate
+from khops.server.schemas.project import ProjectCreate
+from khops.server.schemas.run import RunCreate, RunUpdate
+from khops.server.services.metrics_service import MetricsService
+from khops.server.services.model_service import ModelService
+from khops.server.services.pipeline_service import PipelineService
+from khops.server.services.project_service import ProjectService
+from khops.server.services.run_service import RunService
 
 # ============================================================================
 # Pipeline Service Tests
@@ -118,6 +117,30 @@ class TestPipelineService:
 
         assert total >= 5
         assert len(pipelines) >= 1
+
+
+class TestProjectService:
+    """Test ProjectService CRUD operations."""
+
+    @pytest.fixture
+    def service(self, test_db: Session) -> ProjectService:
+        return ProjectService(test_db)
+
+    async def test_create_project(self, service: ProjectService):
+        payload = ProjectCreate(name="project_alpha", description="Alpha test project")
+        project = await service.create(payload)
+
+        assert project.id is not None
+        assert project.name == "project_alpha"
+
+    async def test_get_project_by_name(self, service: ProjectService):
+        payload = ProjectCreate(name="project_beta", description="Beta project")
+        project = await service.create(payload)
+
+        fetched = await service.get_by_name("project_beta")
+
+        assert fetched is not None
+        assert fetched.id == project.id
 
 
 # ============================================================================
@@ -229,6 +252,17 @@ class TestModelService:
 
         assert updated.stage == "production"
 
+    async def test_update_model_metadata_maps_to_meta(
+        self, service: ModelService, sample_model: Model
+    ):
+        """Test that metadata updates are mapped to the meta field."""
+        update = ModelUpdate(metadata={"source": "unit_test", "format": "pickle"})
+
+        updated = await service.update(sample_model.id, update)
+
+        assert updated.meta == {"source": "unit_test", "format": "pickle"}
+        assert getattr(updated, "metadata", None) is None
+
     async def test_delete_model(self, service: ModelService, sample_model: Model):
         """Test deleting a model."""
         model_id = sample_model.id
@@ -262,6 +296,32 @@ class TestModelService:
         promoted = await service.promote("versioned_model", initial.version, "staging")
 
         assert promoted.stage == "staging"
+        assert promoted.api_port == 8002
+
+    async def test_create_model_sets_api_port(self, service: ModelService):
+        """Test model creation sets the proper API port for the stage."""
+        payload = ModelCreate(
+            name="api_port_model",
+            version="1.0.0",
+            stage="staging",
+            path="s3://models/api_port_model/1.0.0",
+            metrics={"accuracy": 0.96},
+        )
+
+        model = await service.create(payload)
+
+        assert model.api_port == 8002
+        assert model.stage == "staging"
+
+    async def test_promote_model_updates_api_port(
+        self, service: ModelService, multiple_models: list[Model]
+    ):
+        """Test promoting a model updates its API port to the target stage."""
+        initial = await service.get_by_name("versioned_model")
+        promoted = await service.promote("versioned_model", initial.version, "production")
+
+        assert promoted.stage == "production"
+        assert promoted.api_port == 8003
 
 
 # ============================================================================

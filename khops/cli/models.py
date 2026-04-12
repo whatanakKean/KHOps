@@ -1,11 +1,13 @@
 """CLI commands for model management: promote, demote, rollback, retire."""
 
-import click
 import asyncio
+
+import click
 from rich.console import Console
+
 from khops.db.session import SessionLocal
-from khops.server.services.model_service import ModelService
 from khops.server.services.model_promotion_service import ModelPromotionService
+from khops.server.services.model_service import ModelService
 
 console = Console()
 
@@ -23,19 +25,28 @@ def models_cli():
 
 @models_cli.command("list")
 @click.option("--stage", default=None, help="Filter by stage (dev, staging, production)")
+@click.option("--project-id", type=int, help="Filter by project ID")
+@click.option("--pipeline-id", type=int, help="Filter by pipeline ID")
 @click.option("--limit", default=10, type=int, help="Number of models to list")
-def list_models(stage, limit):
+def list_models(stage, project_id, pipeline_id, limit):
     """List registered models."""
     console.print("📦 Registered Models", style="bold blue")
     service = get_model_service()
-    # Simple listing - in production would use async
-    models = service.db.query(service.model).limit(limit).all()
-    if stage:
-        models = [m for m in models if m.stage == stage]
+    try:
+        models, total = asyncio.run(
+            service.list_models(skip=0, limit=limit, project_id=project_id, pipeline_id=pipeline_id)
+        )
 
-    for model in models:
-        console.print(f"  {model.name}@{model.version} [{model.stage}]")
-    console.print(f"\nTotal: {len(models)} models")
+        for model in models:
+            if stage and model.stage != stage:
+                continue
+            pipeline_info = f" (pipeline: {model.pipeline_id})" if model.pipeline_id else ""
+            console.print(f"  {model.name}@{model.version} [{model.stage}]{pipeline_info}")
+        console.print(f"\nTotal: {total} models")
+    except Exception as e:
+        console.print(f"❌ Error: {e}", style="bold red")
+    finally:
+        service.db.close()
 
 
 @models_cli.command("promote")
@@ -47,13 +58,19 @@ def list_models(stage, limit):
     type=click.Choice(["dev", "staging", "production"]),
     help="Target stage",
 )
+@click.option("--pipeline-id", type=int, help="Pipeline ID for pipeline-scoped promotion")
+@click.option("--project-id", type=int, help="Project ID for project-scoped promotion")
 @click.option("--reason", default=None, help="Promotion reason")
-def promote_model(name, version, stage, reason):
+def promote_model(name, version, stage, pipeline_id, project_id, reason):
     """Promote a model to a new stage."""
     console.print(f"🚀 Promoting {name}@{version} to {stage}", style="bold blue")
     service = get_model_service()
     try:
-        promoted = asyncio.run(service.promote(name, version, stage, reason=reason))
+        promoted = asyncio.run(
+            service.promote(
+                name, version, stage, pipeline_id=pipeline_id, project_id=project_id, reason=reason
+            )
+        )
         if promoted:
             console.print(f"✅ Successfully promoted to {stage}", style="bold green")
         else:

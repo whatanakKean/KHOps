@@ -1,7 +1,7 @@
 """Drift detection utilities for model observability."""
 
-from typing import Dict, Any, List, Optional
-from scipy import stats
+from typing import Any, Dict, List, Optional
+
 from khops.db.models.metrics import Metrics
 
 

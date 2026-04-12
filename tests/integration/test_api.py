@@ -12,11 +12,10 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
+from khops.db.models.metrics import Metrics
+from khops.db.models.model import Model
 from khops.db.models.pipeline import Pipeline
 from khops.db.models.run import Run
-from khops.db.models.model import Model
-from khops.db.models.metrics import Metrics
-
 
 # ============================================================================
 # Pipeline API Tests
@@ -96,6 +95,24 @@ class TestPipelineAPI:
         assert logs_response.status_code == 200
         logs_data = logs_response.json()
         assert "logs" in logs_data
+
+
+class TestProjectAPI:
+    """Test project API endpoints."""
+
+    def test_create_and_list_projects(self, client: TestClient):
+        payload = {"name": "api_project", "description": "API Project"}
+
+        create_response = client.post("/api/v1/projects/create", json=payload)
+        assert create_response.status_code == 200
+        project_data = create_response.json()
+        assert project_data["name"] == "api_project"
+        assert project_data["description"] == "API Project"
+
+        list_response = client.get("/api/v1/projects")
+        assert list_response.status_code == 200
+        list_data = list_response.json()
+        assert any(p["name"] == "api_project" for p in list_data["projects"])
 
 
 # ============================================================================
@@ -244,6 +261,15 @@ class TestModelAPI:
 
             assert response.status_code in [200, 422]  # Success or validation error
 
+    def test_get_model_promotion_history(self, client: TestClient, sample_model: Model):
+        """Test GET /api/v1/models/{model_name}/{version}/history."""
+        response = client.get(f"/api/v1/models/{sample_model.name}/{sample_model.version}/history")
+
+        assert response.status_code == 200
+        data = response.json()
+        # Should be a list (empty if no promotions)
+        assert isinstance(data, list)
+
 
 # ============================================================================
 # Metrics API Tests
@@ -289,9 +315,228 @@ class TestMetricsAPI:
         assert "metrics" in data
 
 
+class TestRegistryAPI:
+    """Test model registry and artifact endpoints."""
+
+    def test_get_model_artifacts_returns_meta(self, client: TestClient, valid_model_payload: dict):
+        """Test GET /api/v1/registry/models/{model_name}/artifacts."""
+        payload = {
+            **valid_model_payload,
+            "metadata": {"format": "pickle", "size_bytes": 1234, "hash": "abc123"},
+        }
+
+        register_response = client.post("/api/v1/models/register", json=payload)
+        assert register_response.status_code == 200
+
+        model_name = payload["name"]
+        version = payload["version"]
+
+        response = client.get(f"/api/v1/registry/models/{model_name}/artifacts?version={version}")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["size_bytes"] == 1234
+        assert data["hash"] == "abc123"
+        assert data["artifact_info"]["format"] == "pickle"
+
+    def test_export_model_metadata_returns_metadata(
+        self, client: TestClient, valid_model_payload: dict
+    ):
+        """Test GET /api/v1/registry/export-metadata."""
+        payload = {
+            **valid_model_payload,
+            "metadata": {"owner": "test", "format": "pkl"},
+        }
+
+        register_response = client.post("/api/v1/models/register", json=payload)
+        assert register_response.status_code == 200
+
+        model_name = payload["name"]
+        version = payload["version"]
+
+        response = client.get(
+            f"/api/v1/registry/export-metadata?model_name={model_name}&version={version}"
+        )
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["export_metadata"]["metadata"]["owner"] == "test"
+        assert data["export_metadata"]["metadata"]["format"] == "pkl"
+
+
+class TestPipelineUploadAPI:
+    """Test pipeline upload endpoints."""
+
+    def test_upload_pipeline_from_yaml(self, client: TestClient):
+        """Test POST /api/v1/pipelines/upload."""
+        yaml_content = """
+name: upload_test_pipeline
+version: "1.0"
+description: Upload test pipeline
+nodes:
+  - id: load
+    type: data
+  - id: train
+    type: training
+edges:
+  - from: load
+    to: train
+"""
+        response = client.post(
+            "/api/v1/pipelines/upload",
+            json={"yaml_content": yaml_content},
+        )
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["name"] == "upload_test_pipeline"
+        assert data["definition"]["version"] == "1.0"
+        assert len(data["definition"]["nodes"]) == 2
+
+    def test_upload_invalid_yaml(self, client: TestClient):
+        """Test uploading invalid YAML returns error."""
+        response = client.post(
+            "/api/v1/pipelines/upload",
+            json={"yaml_content": "{ invalid: yaml: content }"},
+        )
+
+        assert response.status_code == 400
+
+
 # ============================================================================
-# Health Check Tests
+# Model Serving Tests
 # ============================================================================
+
+
+class TestModelServingAPI:
+    """Test model serving endpoints (predictions, metadata, health)."""
+
+    def test_serve_model_metadata(self, client: TestClient, sample_model: Model):
+        """Test GET /serve/{model_name}/metadata."""
+        response = client.get(f"/serve/{sample_model.name}/metadata")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["model_name"] == sample_model.name
+        assert data["version"] == sample_model.version
+        assert data["stage"] == sample_model.stage
+
+    def test_serve_model_health(self, client: TestClient, sample_model: Model):
+        """Test GET /serve/{model_name}/health."""
+        response = client.get(f"/serve/{sample_model.name}/health")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["status"] == "available"
+        assert data["model_name"] == sample_model.name
+
+    def test_serve_model_not_found(self, client: TestClient):
+        """Test serving non-existent model returns 404."""
+        response = client.get("/serve/nonexistent/metadata")
+
+        assert response.status_code == 404
+
+    def test_serve_model_health_nonexistent(self, client: TestClient):
+        """Test health check for non-existent model."""
+        response = client.get("/serve/nonexistent/health")
+
+        assert response.status_code == 404
+
+    def test_serve_prediction_with_features(self, client: TestClient, sample_model: Model):
+        """Test POST /serve/{model_name} prediction endpoint."""
+        payload = {
+            "features": [
+                {"feature1": 1.0, "feature2": 2.0},
+                {"feature1": 3.0, "feature2": 4.0},
+            ]
+        }
+
+        response = client.post(f"/serve/{sample_model.name}", json=payload)
+
+        # May fail if model artifact doesn't exist; check for appropriate status
+        assert response.status_code in [200, 404]
+
+
+class TestObservabilityAPI:
+    """Test observability endpoints (metrics, drift, alerts)."""
+
+    def test_observability_summary(self, client: TestClient, multiple_metrics: list[Metrics]):
+        """Test GET /api/v1/observability/summary."""
+        response = client.get("/api/v1/observability/summary")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "metric_count" in data
+        assert "summary" in data
+
+    def test_observability_drift(self, client: TestClient, multiple_metrics: list[Metrics]):
+        """Test GET /api/v1/observability/drift."""
+        response = client.get("/api/v1/observability/drift")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "drift_count" in data
+        assert "signals" in data
+        assert "threshold" in data
+
+    def test_observability_alerts(self, client: TestClient, multiple_metrics: list[Metrics]):
+        """Test GET /api/v1/observability/alerts."""
+        response = client.get("/api/v1/observability/alerts")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "alerts" in data
+
+    def test_observability_alerts_send(self, client: TestClient, multiple_metrics: list[Metrics]):
+        """Test POST /api/v1/observability/alerts/send."""
+        response = client.post("/api/v1/observability/alerts/send")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "message" in data
+        assert "alerts_sent" in data
+        assert "alerts_failed" in data
+
+
+class TestRegistryStatsAPI:
+    """Test registry statistics endpoints."""
+
+    def test_registry_stats(self, client: TestClient, multiple_models: list[Model]):
+        """Test GET /api/v1/registry/stats."""
+        response = client.get("/api/v1/registry/stats")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "total_models" in data
+        assert "models_by_stage" in data
+        assert "unique_model_names" in data
+
+    def test_registry_search(self, client: TestClient, multiple_models: list[Model]):
+        """Test GET /api/v1/registry/search."""
+        response = client.get("/api/v1/registry/search?q=versioned")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert "models" in data
+        assert "total" in data
+
+    def test_registry_models_by_stage(self, client: TestClient, multiple_models: list[Model]):
+        """Test GET /api/v1/registry/stages/{stage}."""
+        for stage in ["dev", "staging", "production"]:
+            response = client.get(f"/api/v1/registry/stages/{stage}")
+            assert response.status_code == 200
+            data = response.json()
+            assert "models" in data
+            assert "total" in data
+
+    def test_registry_compare_models(self, client: TestClient, multiple_models: list[Model]):
+        """Test GET /api/v1/registry/compare."""
+        response = client.get(
+            "/api/v1/registry/compare?model_names=versioned_model&model_names=sample_model"
+        )
+
+        # May not find both if not created; check for appropriate status
+        assert response.status_code in [200, 404]
 
 
 class TestHealthAPI:

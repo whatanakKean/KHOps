@@ -1,0 +1,40 @@
+{
+  "data_load": {
+    "trained": false,
+    "row_count": 20,
+    "columns": [
+      "feature1",
+      "feature2",
+      "target"
+    ],
+    "metrics": null
+  },
+  "data_prep": {
+    "trained": false,
+    "row_count": 20,
+    "columns": [
+      "feature1",
+      "feature2",
+      "target"
+    ],
+    "metrics": null
+  },
+  "model_train": {
+    "trained": true,
+    "row_count": 20,
+    "columns": null,
+    "metrics": {
+      "accuracy": 1.0
+    }
+  },
+  "model_eval": {
+    "trained": false,
+    "row_count": null,
+    "columns": null,
+    "metrics": {
+      "accuracy": 0.75,
+      "precision": 0.8333333333333333,
+      "recall": 0.75
+    }
+  }
+}

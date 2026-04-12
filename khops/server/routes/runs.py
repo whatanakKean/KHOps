@@ -1,10 +1,12 @@
 """Route handlers for runs"""
 
-from fastapi import APIRouter, HTTPException, Depends, Query
-from sqlalchemy.orm import Session
 from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlalchemy.orm import Session
+
 from khops.server.dependencies import get_db
-from khops.server.schemas.run import RunResponse, RunUpdate, RunListResponse
+from khops.server.schemas.run import RunListResponse, RunResponse, RunUpdate
 from khops.server.services.run_service import RunService
 
 router = APIRouter()
@@ -70,6 +72,31 @@ async def get_run_logs(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@router.get("/runs/{run_id}/artifacts")
+async def get_run_artifacts(
+    run_id: int,
+    db: Session = Depends(get_db),
+):
+    """Get artifact directory and run artifact metadata."""
+    try:
+        service = RunService(db)
+        run = await service.get(run_id)
+        if not run:
+            raise HTTPException(status_code=404, detail="Run not found")
+
+        artifacts = run.meta or {}
+        return {
+            "run_id": run_id,
+            "status": run.status,
+            "artifact_dir": artifacts.get("artifact_dir"),
+            "artifact_paths": artifacts.get("artifact_paths", []),
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.post("/runs/{run_id}/cancel")
 async def cancel_run(
     run_id: int,
@@ -82,7 +109,7 @@ async def cancel_run(
         if not run:
             raise HTTPException(status_code=404, detail="Run not found")
 
-        if run.status == "completed":
+        if run.status in {"success", "failed", "cancelled"}:
             raise HTTPException(status_code=400, detail="Cannot cancel completed run")
 
         # Update run status to cancelled

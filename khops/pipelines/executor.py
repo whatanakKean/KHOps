@@ -2,27 +2,30 @@
 
 from __future__ import annotations
 
-import pickle
+import json
 import logging
+import os
+import pickle
+import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
-    precision_score,
-    recall_score,
     mean_squared_error,
+    precision_score,
     r2_score,
+    recall_score,
 )
+from sklearn.model_selection import train_test_split
 
+from khops.core.config import settings
 from khops.pipelines.dag import DAG
-from khops.pipelines.models import PipelineConfig, NodeType
-from khops.pipelines.models import Node
+from khops.pipelines.models import Node, NodeType, PipelineConfig
 
 logger = logging.getLogger(__name__)
 
@@ -33,14 +36,96 @@ class PipelineExecutionError(Exception):
     pass
 
 
+class ExecutionContext:
+    """Context object containing pipeline execution results."""
+
+    def __init__(self, status: str, logs: str, meta: Dict[str, Any], context: Dict[str, Any]):
+        self.status = status
+        self.logs = logs
+        self.meta = meta
+        self.context = context
+
+    def __repr__(self):
+        return f"ExecutionContext(status='{self.status}', nodes_executed={self.meta.get('nodes_executed', 0)})"
+
+
 class PipelineExecutor:
     """Execute validated pipeline configurations."""
 
-    def __init__(self, config: PipelineConfig):
+    def __init__(self, config: PipelineConfig, run_id: Optional[int] = None):
         self.config = config
         self.dag = DAG(config)
         self.logs: list[str] = []
         self.context: dict[str, Any] = {}
+        self.run_id = run_id
+        self.artifact_dir = self._init_artifact_dir()
+
+    def _init_artifact_dir(self) -> Path:
+        base_artifact_dir = Path(settings.STORAGE_PATH or "./data/artifacts")
+        run_name = (
+            f"run_{self.run_id}"
+            if self.run_id is not None
+            else f"run_{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+        )
+        artifact_dir = base_artifact_dir / "runs" / run_name
+        artifact_dir.mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "data" / "raw").mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "data" / "preprocessed").mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "data" / "eda").mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "models").mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "evaluation").mkdir(parents=True, exist_ok=True)
+        (artifact_dir / "logs").mkdir(parents=True, exist_ok=True)
+        return artifact_dir
+
+    def _save_dataframe(self, df: pd.DataFrame, filename: str, subdir: str) -> Path:
+        file_path = self.artifact_dir / subdir / filename
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        df.to_csv(file_path, index=False)
+        return file_path
+
+    def _save_json(self, data: Any, filename: str, subdir: str) -> Path:
+        file_path = self.artifact_dir / subdir / filename
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, default=str)
+        return file_path
+
+    def _copy_raw_source(self, source: str, node_id: str) -> Optional[Path]:
+        source_path = Path(source)
+        if not source_path.exists():
+            return None
+        dest = (
+            self.artifact_dir / "data" / "raw" / f"{source_path.stem}_{node_id}{source_path.suffix}"
+        )
+        shutil.copy2(source_path, dest)
+        return dest
+
+    def _generate_eda(self, df: pd.DataFrame) -> dict[str, Any]:
+        preview = df.head(5).replace({pd.NA: None}).to_dict(orient="records")
+        summary = df.describe(include="all").fillna("").to_dict()
+        return {
+            "shape": df.shape,
+            "columns": df.columns.tolist(),
+            "dtypes": df.dtypes.astype(str).to_dict(),
+            "null_counts": df.isnull().sum().to_dict(),
+            "preview": preview,
+            "summary": summary,
+        }
+
+    def _gather_artifact_paths(self) -> list[str]:
+        artifact_files: list[str] = []
+        for root, _, files in os.walk(self.artifact_dir):
+            for filename in files:
+                artifact_files.append(
+                    str(Path(root).joinpath(filename).relative_to(self.artifact_dir))
+                )
+        return artifact_files
+
+    def _save_execution_logs(self) -> Path:
+        file_path = self.artifact_dir / "logs" / "execution_logs.txt"
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write("\n".join(self.logs))
+        return file_path
 
     def log(self, message: str) -> None:
         timestamp = datetime.utcnow().isoformat()
@@ -68,7 +153,10 @@ class PipelineExecutor:
         summary = self._summarize_context()
         aggregated_metrics = self._aggregate_metrics(summary)
 
-        return {
+        self._save_json(summary, "run_summary.json", "")
+        self._save_execution_logs()
+
+        result = {
             "status": "success",
             "logs": "\n".join(self.logs),
             "meta": {
@@ -76,9 +164,13 @@ class PipelineExecutor:
                 "nodes_executed": len(self.context),
                 "completed_at": datetime.utcnow().isoformat(),
                 "metrics": aggregated_metrics,
+                "artifact_dir": str(self.artifact_dir),
+                "artifact_paths": self._gather_artifact_paths(),
             },
             "context": summary,
         }
+
+        return ExecutionContext(**result)
 
     def _execute_node(self, node: Node) -> Dict[str, Any]:
         if node.type == NodeType.DATA:
@@ -119,6 +211,12 @@ class PipelineExecutor:
                 self.log("No source provided for data node; using empty dataset.")
                 df = pd.DataFrame()
 
+        raw_data_path = None
+        if source:
+            raw_data_path = self._copy_raw_source(source, node.id)
+            if raw_data_path:
+                self.log(f"Saved raw data artifact for node {node.id}: {raw_data_path}")
+
         for operation in operations:
             if operation == "drop_nulls":
                 df = df.dropna()
@@ -139,10 +237,24 @@ class PipelineExecutor:
             else:
                 self.log(f"Unknown data operation '{operation}' ignored")
 
+        preprocessed_path = None
+        eda_path = None
+        if not df.empty:
+            preprocessed_path = self._save_dataframe(
+                df, f"{node.id}_preprocessed.csv", "data/preprocessed"
+            )
+            self.log(f"Saved preprocessed data artifact for node {node.id}: {preprocessed_path}")
+            eda = self._generate_eda(df)
+            eda_path = self._save_json(eda, f"{node.id}_eda.json", "data/eda")
+            self.log(f"Saved EDA artifact for node {node.id}: {eda_path}")
+
         return {
             "dataframe": df,
             "row_count": len(df),
             "columns": df.columns.tolist(),
+            "raw_data_path": str(raw_data_path) if raw_data_path else None,
+            "preprocessed_data_path": str(preprocessed_path) if preprocessed_path else None,
+            "eda_path": str(eda_path) if eda_path else None,
         }
 
     def _run_training_node(self, node: Node) -> Dict[str, Any]:
@@ -180,12 +292,15 @@ class PipelineExecutor:
         predictions = model.predict(X_test)
         metrics = self._compute_metrics(y_test, predictions, target)
         model_path = self._save_model(model, algorithm)
+        metrics_path = self._save_json(metrics, f"{node.id}_training_metrics.json", "evaluation")
+        self.log(f"Saved training metrics artifact for node {node.id}: {metrics_path}")
 
         return {
             "trained": True,
             "algorithm": algorithm,
             "model_path": str(model_path),
             "metrics": metrics,
+            "metrics_path": str(metrics_path),
             "row_count": len(dataframe),
         }
 
@@ -235,12 +350,17 @@ class PipelineExecutor:
         predictions = model.predict(X)
         metrics = self._compute_metrics(y_true, predictions, target, metrics_requested)
         self.log("Evaluation metrics computed.")
+        evaluation_path = self._save_json(
+            metrics, f"{node.id}_evaluation_metrics.json", "evaluation"
+        )
+        self.log(f"Saved evaluation artifact for node {node.id}: {evaluation_path}")
 
         return {
             "evaluated": True,
             "metrics": metrics,
             "target": target,
             "metric_names": metrics_requested,
+            "evaluation_path": str(evaluation_path),
         }
 
     def _get_parent_dataframe(self, node_id: str) -> Optional[pd.DataFrame]:
@@ -342,7 +462,7 @@ class PipelineExecutor:
         return metrics
 
     def _save_model(self, model: Any, algorithm: str) -> Path:
-        model_dir = Path("models")
+        model_dir = self.artifact_dir / "models"
         model_dir.mkdir(parents=True, exist_ok=True)
         model_path = (
             model_dir
@@ -350,6 +470,7 @@ class PipelineExecutor:
         )
         with open(model_path, "wb") as model_file:
             pickle.dump(model, model_file)
+        model_path = model_path.resolve()
         self.log(f"Saved model to {model_path}")
         return model_path
 

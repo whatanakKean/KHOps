@@ -1,11 +1,11 @@
 """KHOps CLI - Command Line Interface"""
 
-import sys
+import asyncio
 import json
 import pickle
-import asyncio
-from pathlib import Path
+import sys
 from datetime import datetime
+from pathlib import Path
 from typing import Any
 
 import click
@@ -13,25 +13,27 @@ import pandas as pd
 import requests
 from rich.console import Console
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
-    precision_score,
-    recall_score,
     mean_squared_error,
+    precision_score,
     r2_score,
+    recall_score,
 )
+from sklearn.model_selection import train_test_split
 
+from khops.cli.models import models_cli
+from khops.cli.monitor import monitor_cli
+from khops.cli.pipeline import pipeline_cli
+from khops.cli.projects import _read_project_state, projects_cli
 from khops.core.config import settings
 from khops.core.logging import setup_logging
 from khops.db.session import SessionLocal
-from khops.pipelines.parser import PipelineParser
 from khops.pipelines.executor import PipelineExecutor
+from khops.pipelines.parser import PipelineParser
 from khops.server.schemas.model import ModelCreate
 from khops.server.services.model_service import ModelService
-from khops.cli.models import models_cli
-from khops.cli.monitor import monitor_cli
 
 console = Console()
 
@@ -204,15 +206,15 @@ def run(pipeline_path: str, verbose: bool):
         result = executor.execute()
 
         if verbose:
-            console.print("\n".join(result["logs"].splitlines()), style="dim")
+            console.print("\n".join(result.logs.splitlines()), style="dim")
 
         console.print("✅ Pipeline execution finished.", style="bold green")
         console.print(f"Pipeline: {pipeline_config.name} v{pipeline_config.version}")
-        console.print(f"Status: {result['status']}")
-        console.print(f"Nodes executed: {len(result['context'])}")
+        console.print(f"Status: {result.status}")
+        console.print(f"Nodes executed: {len(result.context)}")
 
-        if result.get("meta"):
-            console.print(f"Summary: {result['meta']}", style="yellow")
+        if result.meta:
+            console.print(f"Summary: {result.meta}", style="yellow")
 
     except Exception as exc:
         console.print(f"❌ Pipeline execution failed: {exc}", style="bold red")
@@ -265,15 +267,15 @@ def automl_run(pipeline_path: str, algorithms: str):
         console.print(
             f"✅ Best algorithm: {best_algorithm} with score {best_score}", style="bold green"
         )
-        console.print(f"Status: {best_result['status']}")
-        if best_result.get("meta"):
-            console.print(f"Summary: {best_result['meta']}", style="yellow")
+        console.print(f"Status: {best_result.status}")
+        if best_result.meta:
+            console.print(f"Summary: {best_result.meta}", style="yellow")
     else:
         executor = PipelineExecutor(pipeline_config)
         result = executor.execute()
         console.print("✅ AutoML pipeline completed.", style="bold green")
-        if result.get("meta"):
-            console.print(f"Summary: {result['meta']}", style="yellow")
+        if result.meta:
+            console.print(f"Summary: {result.meta}", style="yellow")
 
 
 @cli.group()
@@ -331,6 +333,13 @@ def train_start(
     predictions = model.predict(X)
     metrics = _compute_metrics(y, predictions)
 
+    selected_project = _read_project_state()
+    if selected_project:
+        console.print(
+            f"📌 Using selected project: {selected_project.get('project_name')} (id={selected_project.get('project_id')})",
+            style="dim",
+        )
+
     model_dir = Path("models")
     model_dir.mkdir(parents=True, exist_ok=True)
     model_path = (
@@ -345,6 +354,7 @@ def train_start(
     try:
         service = ModelService(session)
         model_payload = ModelCreate(
+            project_id=selected_project.get("project_id") if selected_project else None,
             name=name,
             version=version,
             stage=stage,
@@ -503,6 +513,8 @@ def init():
 # Add subcommand groups
 cli.add_command(models_cli, name="models")
 cli.add_command(monitor_cli, name="monitor")
+cli.add_command(projects_cli, name="project")
+cli.add_command(pipeline_cli, name="pipeline")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,65 @@
+# Production Environment Configuration
+# Inherits from default.yaml with security and performance optimizations
+
+# Server Configuration - Production hardened
+SERVER_HOST: "0.0.0.0"
+SERVER_PORT: 8000
+MODEL_SERVER_HOST: "0.0.0.0"
+MODEL_SERVER_PORT: 8001
+MODEL_SERVER_PORT_STAGING: 8002
+MODEL_SERVER_PORT_PRODUCTION: 8003
+DEBUG: false
+LOG_LEVEL: "WARNING"                   # Reduce noise in production
+
+# Database Configuration - Production PostgreSQL
+DATABASE_URL: "postgresql://khops:${DB_PASSWORD}@db.internal:5432/khops_prod"
+DATABASE_ECHO: false                   # Never log queries in production
+DATABASE_POOL_SIZE: 50                 # Higher pool for production load
+DATABASE_MAX_OVERFLOW: 10
+
+# Redis Configuration - Production Redis cluster
+REDIS_URL: "redis://redis-prod.internal:6379/0"
+REDIS_PASSWORD: "${REDIS_PASSWORD}"
+REDIS_DB: 0
+
+# Storage Configuration - S3 for scalability
+STORAGE_TYPE: "s3"
+STORAGE_PATH: null
+AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+AWS_REGION: "us-east-1"
+AWS_S3_BUCKET: "khops-artifacts-prod"
+
+# Registry Configuration - S3-backed paths
+REGISTRY_PATH: "s3://khops-registry-prod"
+MODEL_REGISTRY_PATH: "s3://khops-models-prod"
+
+# Pipeline Execution Configuration - Production load
+PIPELINE_MAX_PARALLEL_NODES: 10        # Higher parallelism
+PIPELINE_TIMEOUT_SECONDS: 7200         # 2 hours for complex pipelines
+EXECUTION_TIMEOUT_SECONDS: 7200
+EXECUTION_MAX_RETRIES: 5               # More retries for resilience
+EXECUTION_RETRY_DELAY_SECONDS: 30
+
+# Observability Configuration - Production monitoring
+OBSERVABILITY_ENABLED: true
+METRICS_ENABLED: true
+TRACES_ENABLED: true                   # Full tracing for monitoring
+LOGS_ENABLED: true
+
+# Logging Configuration - Centralized logging
+LOG_TO_FILE: true
+LOG_FILE_PATH: "/var/log/khops/khops.log"
+LOG_MAX_BYTES: 52428800                # 50 MB
+LOG_BACKUP_COUNT: 10
+
+# Scheduler Configuration - Production scale
+SCHEDULER_ENABLED: true
+SCHEDULER_TIMEZONE: "UTC"
+SCHEDULER_POOL_SIZE: 10
+
+# Security Configuration - REQUIRED in production
+AUTH_ENABLED: true
+SECRET_KEY: "${SECRET_KEY}"            # Must be set via environment variable
+JWT_ALGORITHM: "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES: 30

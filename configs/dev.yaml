@@ -1,0 +1,63 @@
+# Development Environment Configuration
+# Inherits from default.yaml, overrides specific values for development
+
+# Server Configuration - More verbose for debugging
+SERVER_HOST: "127.0.0.1"
+SERVER_PORT: 8000
+MODEL_SERVER_HOST: "127.0.0.1"
+MODEL_SERVER_PORT: 8001
+MODEL_SERVER_PORT_STAGING: 8002
+MODEL_SERVER_PORT_PRODUCTION: 8003
+DEBUG: true
+LOG_LEVEL: "DEBUG"
+
+# Database Configuration - Local PostgreSQL or SQLite
+DATABASE_URL: "postgresql://khops:khops_dev@localhost:5432/khops"
+DATABASE_ECHO: true                    # Log SQL queries for debugging
+DATABASE_POOL_SIZE: 10
+DATABASE_MAX_OVERFLOW: 5
+
+# Redis Configuration - Local Redis
+REDIS_URL: "redis://localhost:6379/1"
+REDIS_PASSWORD: null
+REDIS_DB: 1
+
+# Storage Configuration - Local filesystem only
+STORAGE_TYPE: "local"
+STORAGE_PATH: "./data/artifacts_dev"
+AWS_ACCESS_KEY_ID: null
+AWS_SECRET_ACCESS_KEY: null
+
+# Registry Configuration - Development paths
+REGISTRY_PATH: "./data/registry_dev"
+MODEL_REGISTRY_PATH: "./data/models_dev"
+
+# Pipeline Execution Configuration - Fast iteration
+PIPELINE_MAX_PARALLEL_NODES: 2
+PIPELINE_TIMEOUT_SECONDS: 1800        # 30 minutes for development
+EXECUTION_TIMEOUT_SECONDS: 1800
+EXECUTION_MAX_RETRIES: 1
+EXECUTION_RETRY_DELAY_SECONDS: 5
+
+# Observability Configuration - All enabled for development
+OBSERVABILITY_ENABLED: true
+METRICS_ENABLED: true
+TRACES_ENABLED: true                   # Enable tracing in dev
+LOGS_ENABLED: true
+
+# Logging Configuration - Verbose for debugging
+LOG_TO_FILE: true
+LOG_FILE_PATH: "./logs/khops_dev.log"
+LOG_MAX_BYTES: 5242880                 # 5 MB
+LOG_BACKUP_COUNT: 3
+
+# Scheduler Configuration
+SCHEDULER_ENABLED: true
+SCHEDULER_TIMEZONE: "UTC"
+SCHEDULER_POOL_SIZE: 2
+
+# Security Configuration - Relaxed for development
+AUTH_ENABLED: false
+SECRET_KEY: "dev-secret-key-not-secure"
+JWT_ALGORITHM: "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES: 60

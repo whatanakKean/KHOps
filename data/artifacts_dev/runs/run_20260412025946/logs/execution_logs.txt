@@ -1,0 +1,24 @@
+2026-04-12T02:59:46.650851 - Starting pipeline execution: sample_pipeline
+2026-04-12T02:59:46.651148 - Executing node data_load (NodeType.DATA)
+2026-04-12T02:59:46.653458 - Loading data from source: ./examples/data/raw/training_data.csv
+2026-04-12T02:59:46.661145 - Saved raw data artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/raw/training_data_data_load.csv
+2026-04-12T02:59:46.664082 - Saved preprocessed data artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/preprocessed/data_load_preprocessed.csv
+2026-04-12T02:59:46.746907 - Saved EDA artifact for node data_load: data/artifacts_dev/runs/run_20260412025946/data/eda/data_load_eda.json
+2026-04-12T02:59:46.747149 - Completed node data_load
+2026-04-12T02:59:46.747317 - Executing node data_prep (NodeType.DATA)
+2026-04-12T02:59:46.747705 - Loaded upstream data for node data_prep
+2026-04-12T02:59:46.748140 - Applied operation: drop_nulls
+2026-04-12T02:59:46.749642 - Applied operation: normalize
+2026-04-12T02:59:46.750543 - Saved preprocessed data artifact for node data_prep: data/artifacts_dev/runs/run_20260412025946/data/preprocessed/data_prep_preprocessed.csv
+2026-04-12T02:59:46.756946 - Saved EDA artifact for node data_prep: data/artifacts_dev/runs/run_20260412025946/data/eda/data_prep_eda.json
+2026-04-12T02:59:46.757142 - Completed node data_prep
+2026-04-12T02:59:46.757312 - Executing node model_train (NodeType.TRAINING)
+2026-04-12T02:59:46.874951 - Model trained with algorithm: random_forest
+2026-04-12T02:59:46.894339 - Saved model to /workspaces/KHOps/data/artifacts_dev/runs/run_20260412025946/models/sample_pipeline_random_forest_20260412025946.pkl
+2026-04-12T02:59:46.894782 - Saved training metrics artifact for node model_train: data/artifacts_dev/runs/run_20260412025946/evaluation/model_train_training_metrics.json
+2026-04-12T02:59:46.895044 - Completed node model_train
+2026-04-12T02:59:46.895206 - Executing node model_eval (NodeType.EVALUATION)
+2026-04-12T02:59:46.919109 - Evaluation metrics computed.
+2026-04-12T02:59:46.919543 - Saved evaluation artifact for node model_eval: data/artifacts_dev/runs/run_20260412025946/evaluation/model_eval_evaluation_metrics.json
+2026-04-12T02:59:46.919791 - Completed node model_eval
+2026-04-12T02:59:46.919936 - Pipeline execution completed: sample_pipeline

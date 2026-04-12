@@ -1,0 +1,2 @@
+[console_scripts]
+khops = khops.cli.main:cli

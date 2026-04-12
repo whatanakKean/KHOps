@@ -1,0 +1,53 @@
+name: batch-recommendation-system
+description: Batch serving pipeline for daily recommendations
+version: "1.0"
+
+data:
+  source_type: csv
+  source_path: data/user_behavior.csv
+  target_column: purchased
+  test_size: 0.2
+  random_state: 42
+  stratified: true
+
+preprocessing:
+  handle_missing: true
+  missing_strategy: mean
+  remove_duplicates: true
+  encode_categorical: true
+  scale_features: true
+  feature_selection: true
+  n_features_to_select: 20
+
+models:
+  - id: xgb_recommendations
+    model_type: xgboost
+    hyperparameters:
+      n_estimators: 100
+      learning_rate: 0.1
+      max_depth: 6
+
+evaluation:
+  task_type: classification
+  classification_metrics:
+    - accuracy
+    - auc_roc
+  validation_method: k_fold
+  n_splits: 5
+  primary_metric: auc_roc
+
+ranking:
+  ranking_method: best_primary_metric
+  select_top_k: 1
+
+serving:
+  serving_type: batch
+  api:
+    enabled: false
+  batch:
+    enabled: true
+    schedule: daily
+    input_format: parquet
+    output_format: parquet
+    max_batch_size: 50000
+  enable_monitoring: true

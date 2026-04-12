@@ -1,0 +1,83 @@
+name: ensemble-fraud-detection
+description: Ensemble model for fraud detection with soft voting
+version: "1.0"
+
+data:
+  source_type: csv
+  source_path: data/transactions.csv
+  target_column: is_fraud
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  stratified: true
+
+preprocessing:
+  handle_missing: true
+  missing_strategy: mean
+  remove_duplicates: true
+  handle_outliers: false
+  encode_categorical: true
+  encoding_method: onehot
+  scale_features: true
+  scaler_type: standard
+  feature_selection: true
+  feature_selection_method: variance
+
+models:
+  - id: rf
+    model_type: random_forest
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 12
+    n_jobs: -1
+
+  - id: xgb
+    model_type: xgboost
+    hyperparameters:
+      n_estimators: 100
+      learning_rate: 0.1
+      max_depth: 6
+
+  - id: lgb
+    model_type: lightgbm
+    hyperparameters:
+      n_estimators: 100
+      num_leaves: 31
+
+  - id: cb
+    model_type: catboost
+    hyperparameters:
+      iterations: 100
+      depth: 6
+
+  - id: lr
+    model_type: logistic_regression
+    hyperparameters:
+      max_iter: 1000
+    n_jobs: -1
+
+evaluation:
+  task_type: classification
+  classification_metrics:
+    - accuracy
+    - f1
+    - auc_roc
+  validation_method: stratified_k_fold
+  n_splits: 5
+  primary_metric: f1
+
+ranking:
+  ranking_method: ensemble
+  select_top_k: 5
+  ensemble_method: voting
+  ensemble_voting_strategy: soft
+  save_top_k_models: true
+
+serving:
+  serving_type: api
+  api:
+    enabled: true
+    port: 8001
+    max_workers: 8
+  enable_monitoring: true
+  enable_drift_detection: true

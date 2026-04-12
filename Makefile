@@ -50,6 +50,14 @@ test-e2e: ## Run end-to-end tests
 	@echo "$(BLUE)Running E2E tests...$(NC)"
 	pytest tests/e2e/ -v
 
+test-file: ## Run tests for a specific file (usage: make test-file FILE=tests/unit/test_models.py)
+	@echo "$(BLUE)Running tests for $(FILE)...$(NC)"
+	pytest $(FILE) -v
+
+api-test: ## Test API endpoints
+	@echo "$(BLUE)Testing API endpoints...$(NC)"
+	python -c "import requests; print('API server check:', requests.get('http://localhost:8000/docs').status_code if requests.get('http://localhost:8000/docs').status_code == 200 else 'Server not running')"
+
 test-all: ## Run all tests including slow tests
 	@echo "$(BLUE)Running all tests...$(NC)"
 	pytest tests/ -v
@@ -77,6 +85,10 @@ model-server: ## Start dedicated model serving API
 cli: ## Interactive CLI
 	@echo "$(GREEN)Starting KHOps CLI$(NC)"
 	khops
+
+cli-help: ## Show CLI help
+	@echo "$(BLUE)KHOps CLI Commands$(NC)"
+	khops --help
 
 migrate: ## Run database migrations
 	@echo "$(BLUE)Running migrations...$(NC)"

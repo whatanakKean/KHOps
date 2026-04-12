@@ -8,21 +8,22 @@ This module provides:
 - Mock configurations
 """
 
-import pytest
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
-from fastapi.testclient import TestClient
 from datetime import datetime, timedelta
 from typing import Generator
 
-from khops.server.app import app
-from khops.db.base import Base
-from khops.server.dependencies import get_db
-from khops.db.models.pipeline import Pipeline
-from khops.db.models.run import Run
-from khops.db.models.model import Model
-from khops.db.models.metrics import Metrics
+import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
+from khops.db.base import Base
+from khops.db.models.metrics import Metrics
+from khops.db.models.model import Model
+from khops.db.models.pipeline import Pipeline
+from khops.db.models.project import Project
+from khops.db.models.run import Run
+from khops.server.app import app
+from khops.server.dependencies import get_db
 
 # ============================================================================
 # Database Fixtures
@@ -99,7 +100,17 @@ def client(test_db: Session) -> TestClient:
 
 
 @pytest.fixture
-def sample_pipeline(test_db: Session) -> Pipeline:
+def sample_project(test_db: Session) -> Project:
+    """Create a sample project for testing."""
+    project = Project(name="sample_project", description="Sample project")
+    test_db.add(project)
+    test_db.commit()
+    test_db.refresh(project)
+    return project
+
+
+@pytest.fixture
+def sample_pipeline(test_db: Session, sample_project: Project) -> Pipeline:
     """
     Create a sample pipeline for testing.
 
@@ -107,7 +118,9 @@ def sample_pipeline(test_db: Session) -> Pipeline:
         Pipeline: Test pipeline instance
     """
     pipeline = Pipeline(
+        project_id=sample_project.id,
         name="sample_pipeline",
+        version="1.0.0",
         description="Sample pipeline for testing",
         definition={
             "nodes": [
@@ -137,7 +150,7 @@ def sample_run(test_db: Session, sample_pipeline: Pipeline) -> Run:
     """
     run = Run(
         pipeline_id=sample_pipeline.id,
-        status="completed",
+        status="success",
         logs="Test execution logs",
         meta={"duration": 10.5, "nodes_executed": 2},
     )
@@ -148,7 +161,7 @@ def sample_run(test_db: Session, sample_pipeline: Pipeline) -> Run:
 
 
 @pytest.fixture
-def sample_model(test_db: Session) -> Model:
+def sample_model(test_db: Session, sample_project: Project) -> Model:
     """
     Create a sample model for testing.
 
@@ -159,9 +172,11 @@ def sample_model(test_db: Session) -> Model:
         Model: Test model instance
     """
     model = Model(
+        project_id=sample_project.id,
         name="sample_model",
         version="1.0.0",
         stage="dev",
+        api_port=8001,
         path="s3://models/sample_model/1.0.0",
         metrics={"accuracy": 0.95, "f1_score": 0.92},
     )
@@ -209,7 +224,9 @@ def multiple_pipelines(test_db: Session) -> list[Pipeline]:
     pipelines = []
     for i in range(5):
         pipeline = Pipeline(
+            project_id=project.id,
             name=f"pipeline_{i}",
+            version="1.0.0",
             description=f"Pipeline {i} for testing",
             definition={"nodes": [], "edges": []},
         )
@@ -232,7 +249,7 @@ def multiple_runs(test_db: Session, sample_pipeline: Pipeline) -> list[Run]:
         list[Run]: List of test runs
     """
     runs = []
-    statuses = ["completed", "failed", "running", "completed", "pending"]
+    statuses = ["success", "failed", "running", "success", "pending"]
     for i, status in enumerate(statuses):
         run = Run(
             pipeline_id=sample_pipeline.id,
