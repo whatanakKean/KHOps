@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #131317;
+  font-family: var(--font-body), Inter, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(76, 214, 251, 0.3);
+  color: #4cd6fb;
+}
+
+.glass-panel {
+  background: rgba(53, 52, 57, 0.6);
+  backdrop-filter: blur(24px);
+}
+
+.headline {
+  font-family: var(--font-headline), 'Space Grotesk', sans-serif;
+}
+
+.canvas-grid {
+  background-image: radial-gradient(#2a2a2e 1px, transparent 1px);
+  background-size: 24px 24px;
+}
